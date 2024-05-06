@@ -1,0 +1,7 @@
+{% if site.is_under_construction %}
+    {% include under-construction.html %}
+{% else %}
+  {% include header.html %}
+  <div id="content">{{ content }}</div>
+  {% include footer.html %}
+{% endif %}

@@ -1,0 +1,41 @@
+<footer>
+    <div class="footer-content">
+      <h2>Get in touch</h2>
+      <a href="https://www.linkedin.com/in/elvisstiglic/" target="_blank">LinkedIn</a>
+      <a id="emailCopy" onclick="copy()">
+        <span class="tooltiptext" id="tooltip"></span>
+        hello@stiglicelvis.com
+      </a>
+    </div>
+  </footer>
+  
+    <script>
+      window.addEventListener("load", function() {
+          let getPage = window.location.pathname;
+          let portfolioLink = document.querySelectorAll('a')[1];
+          let blogLink = document.querySelectorAll('a')[2];
+  
+          if(getPage === "/") {
+                  portfolioLink.classList.add("selected");
+                  blogLink.classList.remove("selected");
+          } else {
+                  blogLink.classList.add("selected");
+                  portfolioLink.classList.remove("selected");
+          }
+      })
+  
+      function copy() {
+        let copyText = document.getElementById("emailCopy").innerText;
+        navigator.clipboard.writeText(copyText);
+  
+        let tooltip = document.getElementById("tooltip");
+        tooltip.innerHTML = "Copied";
+        tooltip.style.display = "block";
+        setTimeout(
+          function () {
+            tooltip.style.display = "none";
+          }, 2000)
+      }
+    </script>
+  </body>
+  </html>

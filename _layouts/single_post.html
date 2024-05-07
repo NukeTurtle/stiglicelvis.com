@@ -1,0 +1,51 @@
+{% if site.is_under_construction %}
+    {% include under-construction.html %}
+{% else %}
+    {% include header.html %}
+    <div class="loader-bar" id="loader-bar"></div>
+    <div id="singlePost" data-word-count="{{ page.content | number_of_words  }}">
+        <div class="post-stats">
+            {% assign formattedDate = page.date | date: "%d %b %Y" | upcase %}
+            <span>{{formattedDate}}</span>
+        </div>
+        <h1>{{page.title}}</h1>
+        <h4>{{page.description}}</h4>
+        <p>{{page.content}}</p>
+        <div class="tags">
+            {% for tag in page.tags %}
+                {% for logoData in site.data.logos %}
+                {% if logoData.name == tag %}
+                    <span class="tag" name="{{ logoData.name }}" style="background-image: url('/assets/images/sprite.png'); background-position: {{ logoData.sprite_position }}; width: {{ logoData.width }};">
+                        <!-- {{ tag }} -->
+                    </span>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+    <script>
+        // Function to update the loader bar
+        function updateLoaderBar() {
+            const scrollPosition = window.scrollY;
+            const documentHeight = document.documentElement.scrollHeight;
+            const windowHeight = window.innerHeight;
+            const contentHeight = Math.min(documentHeight, windowHeight);
+            const maxScroll = documentHeight - windowHeight;
+            let scrollProgress;
+
+            if (maxScroll > 0) {
+                scrollProgress = (scrollPosition / maxScroll) * 100;
+            } else {
+                scrollProgress = 100;
+            }
+
+            // Update the loader bar width based on scroll progress
+            const loaderBar = document.getElementById('loader-bar');
+            loaderBar.style.width = scrollProgress + '%';
+        }
+
+        window.addEventListener('load', updateLoaderBar);
+        window.addEventListener('scroll', updateLoaderBar);
+    </script>
+    {% include footer.html %}
+{% endif %}

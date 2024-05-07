@@ -13,13 +13,13 @@
       window.addEventListener("load", function() {
           let getPage = window.location.pathname;
           let portfolioLink = document.querySelectorAll('a')[1];
-          let blogLink = document.querySelectorAll('a')[2];
+          let projectsLink = document.querySelectorAll('a')[2];
   
           if(getPage === "/") {
                   portfolioLink.classList.add("selected");
-                  blogLink.classList.remove("selected");
+                  projectsLink.classList.remove("selected");
           } else {
-                  blogLink.classList.add("selected");
+                  projectsLink.classList.add("selected");
                   portfolioLink.classList.remove("selected");
           }
       })
@@ -36,6 +36,15 @@
             tooltip.style.display = "none";
           }, 2000)
       }
+
+      window.addEventListener("scroll", function() {
+        const scrollDiv = document.getElementById("scroll_up");
+        if (window.scrollY > 300) {
+          scrollDiv.style.display = "block";
+        } else {
+          scrollDiv.style.display = "none";
+        }
+      });
     </script>
   </body>
   </html>

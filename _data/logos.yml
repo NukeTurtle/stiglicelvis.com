@@ -1,0 +1,34 @@
+# Logos for tags
+- name: jekyll
+  sprite_position: 0px 2px #done
+  width: 72px
+- name: html
+  sprite_position: -77px 2px #done
+  width: 22px
+- name: css
+  sprite_position: -103px 2px #done
+  width: 22px
+- name: wordpress
+  sprite_position: -125px 2px #done
+  width: 31px
+- name: node
+  sprite_position: -156px 2px #done
+  width: 50px
+- name: sql
+  sprite_position: -210px 1px #done
+  width: 18px
+- name: javascript
+  sprite_position: 0px -29px #done
+  width: 30px
+- name: react
+  sprite_position: -30px -29px #done
+  width: 34px
+- name: php
+  sprite_position: -64px -30px #done
+  width: 55px
+- name: github
+  sprite_position: -128px -29px #done
+  width: 34px
+- name: typescript
+  sprite_position: -171px -29px #done
+  width: 32px

@@ -1,4 +1,4 @@
-name: Update Github Repos
+name: Update Starred Repos
 
 on:
   schedule:
@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Fetch and save github repos
+      - name: Fetch and save starred repos
         run: |
           npm install axios
           node -e "
@@ -59,6 +59,6 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add _data/github_repos.json
-          git commit -m 'Update github repositories'
+          git add _data/starred_repos.json
+          git commit -m 'Update starred repositories'
           git push

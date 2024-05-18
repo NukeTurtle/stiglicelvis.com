@@ -1,13 +1,19 @@
 :root {
-    --primary-color: #415C62;
-    --secondary-color: #3D4E60;
-    --terciary-color: #2B414F;
-    --primary-text-color: #415C62;
-    --secondary-text-color: #9EB3B8;
-    --scroll-track: #D8E0D5;
-    --white: #fff;
-    --primary-font: system-ui, sans-serif;
-  }
+  --primary-color: #415C62;
+  --secondary-color: #3D4E60;
+  --terciary-color: #2B414F;
+  --primary-text-color: #415C62;
+  --secondary-text-color: #9EB3B8;
+  --scroll-track: #D8E0D5;
+  --dark-green: #1c2125;
+  --white: #fff;
+  --primary-font: "Ubuntu", Verdana, Tahoma;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url(../fonts/Ubuntu-Regular.ttf) format("truetype");
+}
   
 *, *:before, *:after {
   box-sizing: inherit;
@@ -29,9 +35,9 @@ body {
   -webkit-font-smoothing: antialiased;
   position: relative;
   min-height: 100vh;
-  background-color: var(--white);
-  font-family: system-ui;
-  color: var(--primary-text-color);
+  background-color: var(--primary-text-color);
+  font-family: var(--primary-font);
+  color: var(--scroll-track);
 }
 
 /* width */
@@ -73,7 +79,6 @@ body {
 }
   
 h1, h2, h3, h5 {
-  font-family: var(--primary-font);
   margin: 0;
   font-weight: 900;
 }
@@ -101,9 +106,7 @@ h4 {
 }
 
 p {
-  /* all: unset; */
   margin: 0;
-  /* text-align: justify; */
   font-size: 1.3rem;
   line-height: 2rem;
 }
@@ -194,12 +197,12 @@ figure {
 .download {
   background: url(../images/download.png) no-repeat;
   background-size: 1rem;
-  background-position: 4rem .75rem;
+  background-position: 1.6rem .7rem;
 }
 
 a,
 a:visited, .more {
-  color: var(--primary-text-color);
+  color: #000;
   border-bottom: 1px solid var(--primary-color);
   text-decoration: none;
   font-weight: 700;
@@ -207,16 +210,16 @@ a:visited, .more {
 
 a:hover {
   cursor: pointer;
-  color: var(--primary-color);
+  color: var(--white);
 }
 
 .selected {
-  color: var(--primary-color) !important;
+  color: var(--white) !important;
 }
 
 .logo img {
   height: 2rem;
-  filter: invert(30%) sepia(53%) saturate(245%) hue-rotate(143deg) brightness(94%) contrast(86%);
+  filter: invert(0%) sepia(0%) saturate(14%) hue-rotate(231deg) brightness(96%) contrast(104%);
 }
 
 .logo a {
@@ -231,7 +234,7 @@ a:hover {
 .post_type {
   border: 1px solid;
   border-radius: 13px;
-  color: var(--primary-text-color);
+  color: var(--white);
   padding: .25rem .5rem !important;
   width: max-content;
   text-transform: none;
@@ -499,9 +502,11 @@ footer {
   position: static;
   display: flex;
   margin-top: auto;
-  background: #fff;
-  border-top: 1px solid #E4E4E4;
+  background: var(--dark-green);
+  border-top: 1px solid #000;
+  box-shadow: 0px 5px 20px 0px #000;
   justify-content: center;
+  color: invert;
 }
 
 .footer-content {
@@ -518,16 +523,26 @@ footer {
 
 .footer-content a {
   width: min-content;
+  color: #415C62;
+}
+
+.footer-content a:hover {
+  color: var(--white);
 }
 
 .footer-content a:first-of-type::after {
   content: "";
   background: url(../images/open.png) no-repeat;
+  filter: invert(35%) sepia(5%) saturate(2434%) hue-rotate(144deg) brightness(88%) contrast(85%);
   background-size: cover;
   width: 16px !important;
   height: 16px !important;
   position: absolute;
   margin: 1px 4px;
+}
+
+.footer-content a:first-of-type::after:hover {
+  filter: invert(100%) sepia(0%) saturate(7445%) hue-rotate(44deg) brightness(116%) contrast(90%);
 }
 
 .tooltip {

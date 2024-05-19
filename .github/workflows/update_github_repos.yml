@@ -17,14 +17,19 @@ jobs:
         with:
           node-version: '14'
 
+      - name: Install dependencies
+        run: npm install axios
+
+      - name: Create _data directory if it doesn't exist
+        run: mkdir -p _data
+
       - name: Fetch and save starred repos
         run: |
-          npm install axios
           node -e "
           const axios = require('axios');
           const fs = require('fs');
-          const username = 'NukeTurtle';
-          const token = process.env.GITHUB_TOKEN;
+          const username = process.env.USER_NAME;
+          const token = process.env.API_KEY;
           const url = \`https://api.github.com/users/\${username}/starred\`;
           const headers = { 'Authorization': \`token \${token}\` };
           const fetchStarredRepos = async (url) => {

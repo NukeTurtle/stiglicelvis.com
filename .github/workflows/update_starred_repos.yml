@@ -12,17 +12,6 @@ jobs:
     steps:
       - name: Create _data directory
         run: mkdir _data
-      
-      - name: Fetch and save starred repos
-        run: |
-          set -e
-          # token=${{ secrets.API_KEY }}
-          url="https://api.github.com/users/NukeTurtle/starred"
-          starred_repos=$(curl -sS --request GET --url "$url" | jq '[.[] | { name: .full_name, url: .url }]')
-          # starred_repos=$(curl -sS --request GET --header "PRIVATE-TOKEN: $GITHUB_TOKEN" $url | jq '[.[] | { name: .full_name, url: .url }]')
-          # curl -sS --request GET --header "PRIVATE-TOKEN: $GIT_TOKEN" "$GIT_API/groups/1079" | jq -r ".description"
-          echo "$starred_repos" > _data/starred_repos.json
-          echo "Starred repositories fetched and saved successfully."
       - name: Configure Git
         run: |
           set -e
@@ -35,6 +24,16 @@ jobs:
           git remote set-url origin https://github.com/NukeTurtle/stiglicelvis.com.git
           # git checkout -b main
           git pull origin main
+      - name: Fetch and save starred repos
+        run: |
+          set -e
+          # token=${{ secrets.API_KEY }}
+          url="https://api.github.com/users/NukeTurtle/starred"
+          starred_repos=$(curl -sS --request GET --url "$url" | jq '[.[] | { name: .full_name, url: .url }]')
+          # starred_repos=$(curl -sS --request GET --header "PRIVATE-TOKEN: $GITHUB_TOKEN" $url | jq '[.[] | { name: .full_name, url: .url }]')
+          # curl -sS --request GET --header "PRIVATE-TOKEN: $GIT_TOKEN" "$GIT_API/groups/1079" | jq -r ".description"
+          echo "$starred_repos" > _data/starred_repos.json
+          echo "Starred repositories fetched and saved successfully."
       - name: Commit changes
         run: |
           set -e

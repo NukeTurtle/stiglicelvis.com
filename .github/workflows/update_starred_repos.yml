@@ -28,7 +28,7 @@ jobs:
           node -e "
           const axios = require('axios');
           const fs = require('fs');
-          const username = process.env.USER_NAME;
+          const username = process.env.GITHUB_REPOSITORY_OWNER;
           const token = process.env.API_KEY;
           const url = \`https://api.github.com/users/\${username}/starred\`;
           const headers = { 'Authorization': \`token \${token}\` };
@@ -59,6 +59,7 @@ jobs:
           "
         env:
           GITHUB_TOKEN: ${{ secrets.API_KEY }}
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
 
       - name: Commit and push changes
         run: |

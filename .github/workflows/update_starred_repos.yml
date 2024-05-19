@@ -38,7 +38,7 @@ jobs:
       - name: Commit changes
         run: |
           set -e
-          git add .
+          git add _data/starred_repos.json
           git commit -m 'Update _data folder with starred repos'
         working-directory: ${{ github.workspace }}/_data
       

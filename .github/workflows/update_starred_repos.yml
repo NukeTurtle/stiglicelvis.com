@@ -34,7 +34,7 @@ jobs:
           git remote add origin https://github.com/NukeTurtle/stiglicelvis.com.git
           git remote set-url origin https://github.com/NukeTurtle/stiglicelvis.com.git
           git checkout -b main
-          git pull
+          git pull origin main
       - name: Commit changes
         run: |
           set -e

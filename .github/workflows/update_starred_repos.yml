@@ -10,64 +10,40 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-
-      - name: Install dependencies
-        run: npm install axios
-
-      - name: Create _data directory if it doesn't exist
-        run: mkdir -p _data
-
+      - name: Create _data directory
+        run: mkdir _data
+      
       - name: Fetch and save starred repos
         run: |
-          node -e "
-          const axios = require('axios');
-          const fs = require('fs');
-          const username = process.env.GITHUB_REPOSITORY_OWNER;
-          const token = process.env.GITHUB_TOKEN;
-          const url = \`https://api.github.com/users/\${username}/starred\`;
-          const headers = { 'Authorization': \`token \${token}\` };
-          const fetchStarredRepos = async (url) => {
-            let repos = [];
-            while (url) {
-              const response = await axios.get(url, { headers });
-              repos = repos.concat(response.data);
-              const linkHeader = response.headers.link;
-              if (linkHeader) {
-                const links = linkHeader.split(',').reduce((acc, link) => {
-                  const [url, rel] = link.split(';').map(part => part.trim());
-                  const cleanUrl = url.slice(1, -1);
-                  const cleanRel = rel.slice(5, -1);
-                  acc[cleanRel] = cleanUrl;
-                  return acc;
-                }, {});
-                url = links.next || null;
-              } else {
-                url = null;
-              }
-            }
-            return repos;
-          };
-          fetchStarredRepos(url).then(repos => {
-            fs.writeFileSync('_data/starred_repos.json', JSON.stringify(repos, null, 2));
-          }).catch(error => console.error('Error:', error));
-          "
-        env:
-          GITHUB_TOKEN: ${{ secrets.API_KEY }}
-          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
-
-      - name: Commit and push changes
+          set -e
+          # token=${{ secrets.API_KEY }}
+          url="https://api.github.com/users/NukeTurtle/starred"
+          starred_repos=$(curl -sS --request GET --url "$url" | jq '[.[] | { name: .full_name, url: .url }]')
+          # starred_repos=$(curl -sS --request GET --header "PRIVATE-TOKEN: $GITHUB_TOKEN" $url | jq '[.[] | { name: .full_name, url: .url }]')
+          # curl -sS --request GET --header "PRIVATE-TOKEN: $GIT_TOKEN" "$GIT_API/groups/1079" | jq -r ".description"
+          echo "$starred_repos" > _data/starred_repos.json
+          echo "Starred repositories fetched and saved successfully."
+      - name: Configure Git
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add _data/starred_repos.json
-          git commit -m 'Update starred repositories'
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          set -e
+          git init
+          git credential-cache exit
+          git config --global url.https://${{ secrets.PAT_TOKEN }}@github.com/.insteadOf https://github.com/
+          git config --global user.name 'NukeTurtle'
+          git config --global user.email 'stiglic.elvis@gmail.com'
+          git remote add origin https://github.com/NukeTurtle/stiglicelvis.com.git
+          git remote set-url origin https://github.com/NukeTurtle/stiglicelvis.com.git
+          git checkout -b main
+          git pull
+      - name: Commit changes
+        run: |
+          set -e
+          git add .
+          git commit -m 'Update _data folder with starred repos'
+        working-directory: ${{ github.workspace }}/_data
+      
+      - name: Push changes
+        run: |
+          set -e
+          git push --set-upstream origin main
+        working-directory: ${{ github.workspace }}/_data

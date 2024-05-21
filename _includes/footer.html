@@ -1,10 +1,14 @@
-<footer>
+<footer class="no-print">
     <div class="footer-content">
       <h2>Get in touch</h2>
-      <a href="https://www.linkedin.com/in/elvisstiglic/" target="_blank">LinkedIn</a>
-      <a id="emailCopy" onclick="copy()">
+      <a class="icon" href="https://www.linkedin.com/in/elvisstiglic/" target="_blank">
+        <span>LinkedIn</span>
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+      <a id="emailCopy" class="icon" onclick="copy()">
         <span class="tooltiptext" id="tooltip"></span>
-        hello@stiglicelvis.com
+        <span>Send me an email</span>
+        <i class="fa-solid fa-envelope"></i>
       </a>
     </div>
   </footer>
@@ -24,18 +28,20 @@
           }
       })
   
-      function copy() {
-        let copyText = document.getElementById("emailCopy").innerText;
-        navigator.clipboard.writeText(copyText);
-  
+      document.getElementById('emailCopy').addEventListener('click', async () => {
+        let popupVisible = false;
         let tooltip = document.getElementById("tooltip");
-        tooltip.innerHTML = "Copied";
-        tooltip.style.display = "block";
+        tooltip.classList.add('show');
+        popupVisible = true;
+        navigator.clipboard.writeText('hello@stiglic.elvis.com');
+        tooltip.innerText = "Email copied to clipboard.";
+
         setTimeout(
           function () {
-            tooltip.style.display = "none";
-          }, 2000)
-      }
+            tooltip.classList.remove('show');
+            popupVisible = false;
+          }, 3000)
+      });
 
       window.addEventListener("scroll", function() {
         const scrollDiv = document.getElementById("scroll_up");

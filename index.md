@@ -5,9 +5,69 @@ title: Portfolio
 
 <section id="pastExperiences">
     <div class="experienceBlock">
-        <h2 class="xpTitle">Check out my Github projects below:</h2>
+        <img class="xpLogo" src="/assets/uploads/eyekandy.svg" alt="EyeKandy logo">
+        <h2 class="xpTitle">EyeKandy, Frontend Developer (Contract work - Remote)</h2>
         <p class="xpText">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at tellus ipsum. Proin vel dolor eu arcu tincidunt eleifend id vitae diam. Nam mauris erat, aliquam nec augue id, elementum ultrices lectus. Nullam ipsum diam, luctus nec ornare sit amet, consectetur sed urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus nec malesuada elit, eget dictum mi. Quisque rhoncus, libero eget tincidunt eleifend, orci magna pellentesque felis, eu pulvinar sem tellus vitae lorem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+            In 2022 I joined EyeKandy .....Lorem ipsum dolor sit amet consectetur. Eget consequat luctus a dui eu morbi eget dui arcu. Id ac justo odio felis eu. Consectetur sit ornare nisl cras. Lobortis massa nibh eget a.
         </p>
+        <ul class="xpLink">
+            <li>
+        <a href="/2024/05/13/Branding-tool.html">Branding tool • How I convinced my manager</a>
+        </li>
+        </ul>
+    </div>
+    <div class="experienceBlock">
+        <img class="xpLogo" src="/assets/uploads/edocuments.svg" alt="EDocuments logo">
+        <h2 class="xpTitle">EDocuments Ltd., Front End Developer (Remote)</h2>
+        <ul class="xpText">
+            <li>Help build a bespoke platform for construction industry</li>
+            <li>Building front end side of the platform using Azure, Javascript, HTML and CSS</li>
+            <li>Plan, design and develop new features</li>
+            <li>Weekly targets meetings and sprints via Teams and workflows using Azure DevOps</li>
+        </ul>
+    </div>
+    <div class="experienceBlock">
+        <img class="xpLogo" src="/assets/uploads/8bm.svg" alt="8 Billion Minds logo">
+        <h2 class="xpTitle">8 Billion Minds, Front End Developer (Part-time volunteer – Remote)</h2>
+        <p class="xpText">
+            In 2021 I joined 8 Billion Minds .....Lorem ipsum dolor sit amet consectetur. Eget consequat luctus a dui eu morbi eget dui arcu. Id ac justo odio felis eu. Consectetur sit ornare nisl cras. Lobortis massa nibh eget a.
+        </p>
+    </div>
+    <div class="experienceBlock">
+        <img class="xpLogo" src="/assets/uploads/rara.svg" alt="Rara Supply logo">
+        <h2 class="xpTitle">Rara Supply Ltd., Lead Web Developer (Part-time consultancy - Remote)</h2>
+        <p class="xpText">
+            In 2021 I joined Rara Supply .....Lorem ipsum dolor sit amet consectetur. Eget consequat luctus a dui eu morbi eget dui arcu. Id ac justo odio felis eu. Consectetur sit ornare nisl cras. Lobortis massa nibh eget a.
+        </p>
+    </div>
+    <div class="experienceBlock">
+        <img class="xpLogo" src="/assets/uploads/gpmd.svg" alt="GPMD logo">
+        <h2 class="xpTitle">GPMD, Frontend Developer (Contract work - Remote)</h2>
+        <ul class="xpText">
+            <li>Take a role in delivering, updating and maintaining our client's ecommerce websites to the highest of standards</li>
+            <li>Exhibit good front end development standards and practices, including documentation, consistent code style, testing, accessibility etc.</li>
+            <li>Collaborate and work with the back end team to ensure all projects are delivered efficiently and smoothly</li>
+            <li>Work closely with other members of the team, turning creative design solutions into working websites</li>
+            <li>Keep up-to-date with the latest front end web technologies, techniques and best practices, and freely share this knowledge with the wider team</li>
+            <li>Help solve technical and support issues, and help others with problem solving and ideas generation</li>
+            <li>Maintain a professional, and high level of communication with the team and with our clients, whether that be via email/messaging, verbally, in written documentation etc.</li>
+            <li>Make sure estimates are as accurate as possible, taking into account risks and appropriate contingencies</li>
+            <li>Take part in training and workshops internally and/or with clients as required, and support and mentor other team members when necessary</li>
+        </ul>
+    </div>
+    <div class="experienceBlock">
+        <img class="xpLogo" src="/assets/uploads/hurlingham.svg" alt="The Hurlingham Club logo">
+        <h2 class="xpTitle">The Hurlingham Club., Technical Operations Manager (London)</h2>
+        <ul class="xpText">
+            <li>In-house TechOps Manager overseeing over 150 users and managing a team of 2 IT Support Technicians.</li>
+            <li>Responsible for resolving all IT related BAU issues.</li>
+            <li>Managing 9 physical servers and 30 virtual servers via VMware.</li>
+            <li>Administrating Window Server 2008 R2, 2012 R2 and Server 2016 DC and 2019 DC.</li>
+            <li>Managing and tracking an IT budget of £200k+.</li>
+            <li>Managing relationships with 20+ 3rd party external vendors.</li>
+            <li>Planning and execution of Disaster Recovery.</li>
+            <li>Administration and management of Exchequer (an integrated accounting and business management
+            software).</li>
+        </ul>
     </div>
 </section>

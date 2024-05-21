@@ -9,15 +9,18 @@
     <link rel="icon" sizes="152x152" type="image/png" href="{{site.baseurl}}/assets/images/favicon152x152.png">
     <link rel="icon" sizes="32x32" type="image/png" href="{{site.baseurl}}/assets/images/favicon32x32.png">
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/custom.css">
+    <script src="{{site.baseurl}}/assets/js/fontawesome.js"></script>
 </head>
 {% include analytics.html %}
 <body>
-    <a id="scroll_up" href="#"></a>
-    <div class="navbar">
+    <a id="scroll_up" class="no-print" href="#">
+        <i class="fa-solid fa-caret-up"></i>
+    </a>
+    <div class="navbar no-print">
         <menu class="nav">
             <li class="nav-item logo">
                 <a aria-current="page" href="/">
-                    <img src="{{site.baseurl}}/assets/images/logo2.svg" alt="Elvis Stiglic logo">
+                    <img src="{{site.baseurl}}/assets/images/logo.svg" alt="Elvis Stiglic logo">
                 </a>
             </li>
             <div class="nav_links">
@@ -27,9 +30,11 @@
                 <li class="nav-item">
                     <a aria-current="page" href="{{site.baseurl}}/projects.html">Projects</a>
                 </li>
-                <li class="nav-item icon download">
-                    <a class="resume-placeholder " href="../assets/uploads/CV_Elvis.pdf" alt="Download CV">
-                        CV</a>
+                <li class="nav-item">
+                    <a class="icon" href="../assets/uploads/CV_Elvis.pdf" target="_blank" alt="Download CV">
+                        <span>CV</span>
+                        <i class="fa-solid fa-file-lines"></i>
+                    </a>
                 </li>
             </div>
         </menu>

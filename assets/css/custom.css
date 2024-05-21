@@ -1,18 +1,25 @@
 :root {
-  --primary-color: #415C62;
+  --primary-color: #9CDCFE;
   --secondary-color: #3D4E60;
-  --terciary-color: #2B414F;
-  --primary-text-color: #415C62;
-  --secondary-text-color: #9EB3B8;
-  --scroll-track: #D8E0D5;
-  --dark-green: #1c2125;
-  --white: #fff;
-  --primary-font: "Ubuntu", Verdana, Tahoma;
+  --background-color: #1E1E1E;
+  --toolbar: #333333;
+  --menu: #252526;
+  --title-color: #D7BA7D;
+  --link: #CE9178;
+  --comment: #6A9955;
+  --light: #cccccc;
+  --white: #ffffff;
+  --primary-font: "Ubuntu";
 }
 
 @font-face {
   font-family: "Ubuntu";
   src: url(../fonts/Ubuntu-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Cascadia";
+  src: url(../fonts/CascadiaCode.woff2) format("woff2");
 }
   
 *, *:before, *:after {
@@ -35,9 +42,9 @@ body {
   -webkit-font-smoothing: antialiased;
   position: relative;
   min-height: 100vh;
-  background-color: var(--primary-text-color);
+  background-color: var(--background-color);
   font-family: var(--primary-font);
-  color: var(--scroll-track);
+  color: var(--light);
 }
 
 /* width */
@@ -47,38 +54,46 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: var(--scroll-track);
+  background: var(--menu);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-color);
+  background: var(--secondary-color);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--secondary-text-color);
+  background: var(--light);
 }
 
-#scroll_up{
+::selection {
+  color: var(--background-color);
+  background: var(--comment);
+}
+
+#scroll_up {
   position: fixed;
   display: none;
   bottom: 20px;
   right: 20px;
-  background: url(../images/angle-up-solid.svg) no-repeat;
-  background-color: var(--white);
   background-position: center;
+  margin: 0 auto;
   height: 32px;
   width: 32px;
-  border: 1px solid;
+  border: 1px solid var(--comment);
+  color: var(--comment);
   border-radius: 50%;
+  padding: 6px 10px;
 }
 
-#scroll_up:hover{
-  background-color: var(--scroll-track);
+#scroll_up:hover {
+  border-color: var(--light);
+  color: var(--light);
 }
   
 h1, h2, h3, h5 {
+  color: var(--title-color);
   margin: 0;
   font-weight: 900;
 }
@@ -102,10 +117,11 @@ h4 {
   font-weight: 400;
   line-height: 2rem;
   border-left: 2px solid var(--primary-color);
-  padding-left: 2rem;
+  background-color: var(--toolbar);
+  padding: 2rem;
 }
 
-p {
+p, .xpText {
   margin: 0;
   font-size: 1.3rem;
   line-height: 2rem;
@@ -116,7 +132,7 @@ strong {
 }
 
 .primary {
-  background-color: var(--white);
+  background-color: var(--light);
   color: #fff;
 }
 
@@ -194,16 +210,15 @@ figure {
   gap: .5rem;
 }
 
-.download {
-  background: url(../images/download.png) no-repeat;
-  background-size: 1rem;
-  background-position: 1.6rem .7rem;
+.icon {
+  display: flex;
+  gap: .5rem;
 }
 
 a,
 a:visited, .more {
-  color: #000;
-  border-bottom: 1px solid var(--primary-color);
+  color: var(--link);
+  border-bottom: 1px solid var(--link);
   text-decoration: none;
   font-weight: 700;
 }
@@ -214,7 +229,7 @@ a:hover {
 }
 
 .selected {
-  color: var(--white) !important;
+  color: var(--light) !important;
 }
 
 .logo img {
@@ -234,7 +249,7 @@ a:hover {
 .post_type {
   border: 1px solid;
   border-radius: 13px;
-  color: var(--white);
+  color: var(--comment);
   padding: .25rem .5rem !important;
   width: max-content;
   text-transform: none;
@@ -298,10 +313,6 @@ textarea {
   z-index: 9999;
 }
 
-.resume-placeholder {
-  margin-right: 22px;
-}
-
 img {
   height: 100%;
   object-fit: cover;
@@ -357,7 +368,6 @@ span {
 }
 
 .block span {
-  /* text-align: justify; */
   display: block;
 }
 
@@ -467,11 +477,11 @@ span {
   align-self: center;
 }
 
-.xpLogo {
+.logo, .xpLogo {
+  filter: invert(97%) sepia(4%) saturate(1%) hue-rotate(316deg) brightness(86%) contrast(87%);
   height: fit-content;
   object-fit: contain;
-  width: 130px;
-  /* filter: grayscale(0) contrast(1) saturate(0); */
+  max-width: 10rem;
 }
 
 .xpLink {
@@ -483,17 +493,6 @@ span {
   margin: 0;
 }
 
-.xpLink li {
-  background: url(../images/case_study.png) no-repeat;
-  background-size: auto 16px;
-  background-position-y: bottom;
-  position: relative;
-}
-
-.xpLink li a {
-  margin-left: 1.5rem;
-}
-
 .more {
   width: max-content;
 }
@@ -502,11 +501,12 @@ footer {
   position: static;
   display: flex;
   margin-top: auto;
-  background: var(--dark-green);
+  background: var(--menu);
   border-top: 1px solid #000;
-  box-shadow: 0px 5px 20px 0px #000;
+  box-shadow: 
+    rgba(0, 0, 0, 0.19) 0px -10px 20px, 
+    rgba(0, 0, 0, 0.23) 0px -6px 6px;
   justify-content: center;
-  color: invert;
 }
 
 .footer-content {
@@ -522,27 +522,7 @@ footer {
 }
 
 .footer-content a {
-  width: min-content;
-  color: #415C62;
-}
-
-.footer-content a:hover {
-  color: var(--white);
-}
-
-.footer-content a:first-of-type::after {
-  content: "";
-  background: url(../images/open.png) no-repeat;
-  filter: invert(35%) sepia(5%) saturate(2434%) hue-rotate(144deg) brightness(88%) contrast(85%);
-  background-size: cover;
-  width: 16px !important;
-  height: 16px !important;
-  position: absolute;
-  margin: 1px 4px;
-}
-
-.footer-content a:first-of-type::after:hover {
-  filter: invert(100%) sepia(0%) saturate(7445%) hue-rotate(44deg) brightness(116%) contrast(90%);
+  width: max-content;
 }
 
 .tooltip {
@@ -551,31 +531,23 @@ footer {
 }
 
 #tooltip {
-  display: none;
-  width: 140px;
-  background-color: #555;
+  background-color: var(--comment);
   color: #fff;
   text-align: center;
   border-radius: 6px;
-  border-bottom-right-radius: 0;
-  padding: 5px;
-  position: absolute;
+  padding: .5rem;
+  position: fixed;
   z-index: 1;
-  top: -2rem;
-  left: 100%;
+  bottom: -2rem;
+  left: 50%;
   transform: translateX(-50%);
+  transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
 }
 
-#tooltip::before {
-  content: "";
-  width: 0;
-  height: 0;
-  border-right: 0.6rem solid transparent;
-  border-top: 0.6rem solid #555;
-  display: block;
-  position: absolute;
-  margin-top: 25px;
-  left: 5px;
+#tooltip.show {
+  bottom: 1rem;
+  opacity: 1;
 }
 
 /* MEDIA QUERIES */
@@ -614,5 +586,75 @@ footer {
   .nav_links {
     gap: unset;
     justify-content: space-evenly;
+  }
+}
+
+@media print {
+  /* Remove default browser headers/footers */
+  @page {
+    margin: 12pt 0;
+  }
+
+  /* Basic resets */
+  * {
+    color: #000 !important; /* Ensure all text is black */
+    background: none !important; /* Remove all backgrounds */
+    box-shadow: none !important; /* Remove shadows */
+    text-shadow: none !important; /* Remove text shadows */
+  }
+
+  /* Remove unnecessary elements */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Set font sizes and types for readability */
+  body, p {
+    font-size: 12pt !important; /* Set an appropriate font size */
+    line-height: 1.4 !important; /* Ensure good line spacing */
+  }
+
+  h1 {
+    font-size: 22pt !important;
+  }
+
+  h2 {
+    font-size: 18pt !important;
+  }
+
+  h3 {
+    font-size: 14pt !important;
+  }
+
+  /* Make sure links look appropriate */
+  a {
+    border-color: #000 !important;
+  }
+
+  #pastExperiences {
+    gap: 25pt !important;
+  }
+
+  .experienceBlock {
+    gap: 5pt !important;
+  }
+
+  .xpLogo {
+    filter: none !important;
+    max-width: 40pt !important;
+  }
+  
+  .xpLink {
+    gap: 5pt !important;
+  }
+
+  /* Custom styles for specific elements */
+  .print-only {
+    display: block !important; /* Show elements only in print */
+  }
+
+  /* Page breaks for multi-page documents */
+  .page-break {
+    page-break-before: always;
   }
 }

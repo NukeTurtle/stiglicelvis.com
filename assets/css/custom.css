@@ -16,11 +16,6 @@
   font-family: "Ubuntu";
   src: url(../fonts/Ubuntu-Regular.ttf) format("truetype");
 }
-
-@font-face {
-  font-family: "Cascadia";
-  src: url(../fonts/CascadiaCode.woff2) format("woff2");
-}
   
 *, *:before, *:after {
   box-sizing: inherit;
@@ -424,36 +419,6 @@ span {
   object-fit: contain;
 }
 
-/* Show images for even posts and adjust order */
-#post-container .post:nth-child(even) .post-content {
-  order: 2;
-}
-
-#post-container .post:nth-child(even) .post-image {
-  order: 1;
-  margin-right: 20px;
-}
-
-/* Show images for odd posts and adjust order */
-#post-container .post:nth-child(odd) .post-content {
-  order: 1;
-}
-
-/* Hide image for even posts if there's no image */
-#post-container .post:nth-child(even):not(:has(.post-image)) .post-image {
-  display: none;
-}
-
-/* Hide image for odd posts if there's no image */
-#post-container .post:nth-child(odd):not(:has(.post-image)) .post-image {
-  display: none;
-}
-
-/* Ensure text takes full width if there's no image */
-#post-container .post:not(:has(.post-image)) .post-content {
-  flex: 1;
-}
-
 .promoted {
   border: 1px solid var(--primary-color) !important;
   border-radius: 5px;
@@ -609,9 +574,9 @@ footer {
   }
 
   /* Set font sizes and types for readability */
-  body, p {
-    font-size: 12pt !important; /* Set an appropriate font size */
-    line-height: 1.4 !important; /* Ensure good line spacing */
+  body, p, li {
+    font-size: 12pt !important;
+    line-height: 1.4 !important;
   }
 
   h1 {
@@ -626,7 +591,6 @@ footer {
     font-size: 14pt !important;
   }
 
-  /* Make sure links look appropriate */
   a {
     border-color: #000 !important;
   }

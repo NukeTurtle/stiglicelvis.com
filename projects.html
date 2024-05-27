@@ -1,24 +1,37 @@
 ---
 layout: default
 title: Projects
-under_construction: "{{ site.is_under_construction }}"
 ---
 
 <section id="post-container" class="block">
-  <ul id="starred-repos">
     {% for repo in site.data.starred_repos %}
-      <li>
-        <a href="{{ repo.html_url }}" target="_blank">{{ repo.full_name }}</a> - {{ repo.description }}
-      </li>
+      <a class="post-title" href="{{ repo.html_url }}" target="_blank">
+        <div class="post">
+          <div class="post-content">
+            <img src="{{ site.baseurl }}/assets/uploads/{{ repo.image }}"/>
+            <h2>
+              {{ repo.name }}
+            </h2>
+            <p>{{ repo.description }}</p>
+            <div class="more">Read more</div>
+            <div class="post-stats">             
+              {% for language in repo.languages %}
+              <span class="post_type">{{ language }}</span>
+              {% endfor %}
+            </div>
+            {% assign formattedDate = repo.created | date: "%d %b %Y" | upcase %}
+            <span>{{formattedDate}}</span>
+          </div>
+        </div>
+      </a>
     {% endfor %}
-  </ul>
   {% for post in site.posts %}
     {% if post.posted == 1 %}
-      <a class="post-title" href="{{post.url}}">
+      <a class="post-title" href="{{ post.url}}">
           <div class="post{% if post.promoted == 1 %} promoted{% endif %}" data-word-count="{{ post.content | number_of_words  }}">
           <div class="post-content">
             {% if post.image != null %}
-            <img class="post-image" src="{{site.baseurl}}/assets/uploads/{{post.image}}">
+            <img class="post-image" src="{{ site.baseurl }}/assets/uploads/{{ post.image }}">
             {% endif %}
             <h2>{{post.title}}</h2>
             <span>{{post.content}}</span>

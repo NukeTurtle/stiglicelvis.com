@@ -1,34 +1,55 @@
 [
     {
-      "name": "NukeTurtle/TemplateSwitcher",
-      "url": "https://api.github.com/repos/NukeTurtle/TemplateSwitcher"
+      "name": "InFridge",
+      "description": "This was a group project and an opportunity to work on a coding project collaboratively. It's been a fantastic opportunity to train on using GitHub branches and pull requests, as well as the GitHub projects page.",
+      "image": "InFridge.png",
+      "languages": ["JavaScript", "CSS", "HTML"],
+      "created": "2022-04-27T11:22:04Z",
+      "html_url": "https://github.com/NukeTurtle/TemplateSwitcher"
     },
+
     {
-      "name": "NukeTurtle/password-generator",
-      "url": "https://api.github.com/repos/NukeTurtle/password-generator"
+      "name": "Template Switcher",
+      "description": "This was a group project and an opportunity to work on a coding project collaboratively. It's been a fantastic opportunity to train on using GitHub branches and pull requests, as well as the GitHub projects page.",
+      "image": "InFridge.png",
+      "languages": ["JavaScript", "CSS", "HTML"],
+      "created": "2022-04-27T11:22:04Z",
+      "html_url": "https://github.com/NukeTurtle/TemplateSwitcher"
     },
+
     {
-      "name": "NukeTurtle/Weather-Dashboard",
-      "url": "https://api.github.com/repos/NukeTurtle/Weather-Dashboard"
+      "name": "Password Generator",
+      "description": "I created a Password generator app that runs in the browser and features dynamically updated HTML and CSS, all powered by JavaScript code that I wrote. The app has a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes. The password can include special characters.",
+      "image": "InFridge.png",
+      "languages": ["JavaScript", "CSS", "HTML"],
+      "created": "2023-01-29T22:03:53Z",
+      "html_url": "https://github.com/NukeTurtle/password-generator"
     },
+
     {
-      "name": "NukeTurtle/Daily-Planner",
-      "url": "https://api.github.com/repos/NukeTurtle/Daily-Planner"
+      "name": "Weather Dashboard",
+      "description": "A Weather Dashboard with a search that shows users current Weather and 5 day prognosis by city name.",
+      "image": "InFridge.png",
+      "languages": ["JavaScript", "CSS", "HTML", "APIs"],
+      "created": "2023-01-30T15:01:53Z",
+      "html_url": "https://github.com/NukeTurtle/Weather-Dashboard"
     },
+
     {
-      "name": "NukeTurtle/InFridge",
-      "url": "https://api.github.com/repos/NukeTurtle/InFridge"
+      "name": "Daily Planner",
+      "description": "A Daily Planner app that allows users to plan their work day by saving items for each task per hours and colours past/present and future time differently.",
+      "image": "InFridge.png",
+      "languages": ["JavaScript", "CSS", "HTML"],
+      "created": "2023-01-30T15:01:32Z",
+      "html_url": "https://github.com/NukeTurtle/Daily-Planner"
     },
+
     {
-      "name": "NukeTurtle/anna-test",
-      "url": "https://api.github.com/repos/NukeTurtle/anna-test"
-    },
-    {
-      "name": "NukeTurtle/horiseon-marketing",
-      "url": "https://api.github.com/repos/NukeTurtle/horiseon-marketing"
-    },
-    {
-      "name": "NukeTurtle/to-do",
-      "url": "https://api.github.com/repos/NukeTurtle/to-do"
+      "name": "To-do",
+      "description": "A small to-do app made with React.",
+      "image": "InFridge.png",
+      "languages": ["JavaScript", "React", "CSS", "HTML"],
+      "created": "2023-09-03T21:39:05Z",
+      "html_url": "https://github.com/NukeTurtle/to-do"
     }
   ]

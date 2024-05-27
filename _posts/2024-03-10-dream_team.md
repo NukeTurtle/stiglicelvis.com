@@ -6,7 +6,6 @@ tags: ["html", "css", "wordpress", "sql", "php", "javascript"]
 image: "dreamteamdance.jpg"
 promoted: 0
 posted: 1
-deleted: 0
 ---
 
 <p style="text-align: left;">

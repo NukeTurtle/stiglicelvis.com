@@ -7,49 +7,74 @@
       "created": "2022-04-27T11:22:04Z",
       "html_url": "https://github.com/NukeTurtle/TemplateSwitcher"
     },
-
     {
       "name": "Template Switcher",
       "description": "This was a group project and an opportunity to work on a coding project collaboratively. It's been a fantastic opportunity to train on using GitHub branches and pull requests, as well as the GitHub projects page.",
-      "image": "InFridge.png",
+      "image": "templateswitcher.png",
       "languages": ["JavaScript", "CSS", "HTML"],
       "created": "2022-04-27T11:22:04Z",
       "html_url": "https://github.com/NukeTurtle/TemplateSwitcher"
     },
-
     {
       "name": "Password Generator",
       "description": "I created a Password generator app that runs in the browser and features dynamically updated HTML and CSS, all powered by JavaScript code that I wrote. The app has a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes. The password can include special characters.",
-      "image": "InFridge.png",
+      "image": "passwordgenerator.png",
       "languages": ["JavaScript", "CSS", "HTML"],
       "created": "2023-01-29T22:03:53Z",
       "html_url": "https://github.com/NukeTurtle/password-generator"
     },
-
     {
       "name": "Weather Dashboard",
       "description": "A Weather Dashboard with a search that shows users current Weather and 5 day prognosis by city name.",
-      "image": "InFridge.png",
+      "image": "weatherdash.png",
       "languages": ["JavaScript", "CSS", "HTML", "APIs"],
       "created": "2023-01-30T15:01:53Z",
       "html_url": "https://github.com/NukeTurtle/Weather-Dashboard"
     },
-
     {
       "name": "Daily Planner",
       "description": "A Daily Planner app that allows users to plan their work day by saving items for each task per hours and colours past/present and future time differently.",
-      "image": "InFridge.png",
+      "image": "workdayscheduler.png",
       "languages": ["JavaScript", "CSS", "HTML"],
       "created": "2023-01-30T15:01:32Z",
       "html_url": "https://github.com/NukeTurtle/Daily-Planner"
     },
-
     {
-      "name": "To-do",
-      "description": "A small to-do app made with React.",
-      "image": "InFridge.png",
-      "languages": ["JavaScript", "React", "CSS", "HTML"],
+      "name": "Accordion",
+      "description": "A small app to showcase CSS and JS run accordion",
+      "image": "accordion.png",
+      "languages": ["JavaScript", "CSS", "HTML"],
       "created": "2023-09-03T21:39:05Z",
-      "html_url": "https://github.com/NukeTurtle/to-do"
+      "html_url": "https://github.com/NukeTurtle/faq-accordion-card-main-js"
+    },
+    {
+      "name": "Currency Converter",
+      "description": "A small test app for converting from EUR to USD and back",
+      "image": "currencyconverter.png",
+      "languages": ["JavaScript", "CSS", "HTML"],
+      "created": "2023-09-03T21:39:05Z",
+      "html_url": "https://github.com/NukeTurtle/currencyConverter"
+    },
+    {
+      "name": "Images API",
+      "description": "A small app to showcase top 10 images from Unsplash",
+      "image": "imagesapi.png",
+      "languages": ["JavaScript", "CSS", "HTML", "APIs"],
+      "created": "2023-09-03T21:39:05Z",
+      "html_url": "https://github.com/NukeTurtle/Display-images-API"
+    },{
+      "name": "Fruit Inc",
+      "description": "Demo game for buying/purchasing fruit (POC only)",
+      "image": "fruitinc.png",
+      "languages": ["JavaScript", "CSS", "HTML"],
+      "created": "2023-09-03T21:39:05Z",
+      "html_url": "https://github.com/NukeTurtle/FruitInc"
+    },{
+      "name": "IP Mapper",
+      "description": "A small app that gets your public IP and shows it's closest location on a map",
+      "image": "iptracker.png",
+      "languages": ["JavaScript", "CSS", "HTML"],
+      "created": "2023-09-03T21:39:05Z",
+      "html_url": "https://github.com/NukeTurtle/IP-Address-Tracker"
     }
   ]

@@ -8,11 +8,12 @@ title: Portfolio
         <img class="xpLogo" src="/assets/uploads/eyekandy.svg" alt="EyeKandy logo">
         <h2 class="xpTitle">EyeKandy, Frontend Developer (Contract work - Remote)</h2>
         <p class="xpText">
-            In 2022 I joined EyeKandy .....Lorem ipsum dolor sit amet consectetur. Eget consequat luctus a dui eu morbi eget dui arcu. Id ac justo odio felis eu. Consectetur sit ornare nisl cras. Lobortis massa nibh eget a.
+            In 2022 I joined EyeKandy as a contractor. Since then I worked on numerous projects with their teams of designers and project managers, building highly interactive product pages that look and behave exactly like their mobile apps.
+            Some of the more notable clients included Intel, Bacardi, Dewar's, Frubes and more. I translated their Figma designes into pixel perfect, fully responsive mobile and desktop versions.
         </p>
         <ul class="xpLink">
             <li>
-        <a href="/2024/05/13/Branding-tool.html">Branding tool • How I convinced my manager</a>
+        <a href="https://spooky.si/dewars/" target="_blank">Dewar's</a>
         </li>
         </ul>
     </div>

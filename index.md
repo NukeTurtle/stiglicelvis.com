@@ -9,12 +9,28 @@ title: Portfolio
         <h2 class="xpTitle">EyeKandy, Frontend Developer (Contract work - Remote)</h2>
         <p class="xpText">
             In 2022 I joined EyeKandy as a contractor. Since then I worked on numerous projects with their teams of designers and project managers, building highly interactive product pages that look and behave exactly like their mobile apps.
-            Some of the more notable clients included Intel, Bacardi, Dewar's, Frubes and more. I translated their Figma designes into pixel perfect, fully responsive mobile and desktop versions.
+            Some of the more notable clients included Intel, Bacardi, Dewar's, Frubes and more. I translated their Figma designs into pixel-perfect, fully responsive mobile and desktop versions.<br>
+            A few examples below:
         </p>
         <ul class="xpLink">
             <li>
-        <a href="https://spooky.si/dewars/" target="_blank">Dewar's</a>
-        </li>
+                <a href="https://spooky.si/dewars/" target="_blank">Dewar's</a> (best experience on mobile)
+            </li>
+            <li>
+                <a href="https://spooky.si/zooroyal/" target="_blank">Zoo Royal</a> (best experience on mobile)
+            </li>
+            <li>
+                <a href="https://spooky.si/angelsenvy/" target="_blank">Angels Envy - Toast the trees</a> (best experience on mobile)
+            </li>
+            <li>
+                <a href="https://spooky.si/frubes/" target="_blank">Frubes</a> (best experience on mobile)
+            </li>
+            <li>
+                <a href="https://spooky.si/cru/" target="_blank">Bombay Sapphire Premier CRU</a> (best experience on mobile)
+            </li>
+            <li>
+                <a href="https://spooky.si/diageo/" target="_blank">Diageo - Summer camp cocktails</a> (best experience on mobile)
+            </li>
         </ul>
     </div>
     <div class="experienceBlock">

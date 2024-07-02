@@ -1,7 +1,7 @@
 ---
 layout: "single_post"
 title: "TIME TEST DEMO"
-description: '"Don’t change the original design," my Product Lead told me on my second day at Simpology. He had designed the whole solution two years before I joined, and the team had already implemented 20% of the design. This is a story about how I changed the original design."'
+description: 'A fully animated and feature packed website for a dance team called Dreamteam.'
 tags: ["html", "css", "wordpress", "sql", "php", "javascript"]
 image: "dreamteamdance.jpg"
 promoted: 0

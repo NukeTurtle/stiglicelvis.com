@@ -47,14 +47,12 @@ title: Portfolio
         <img class="xpLogo" src="/assets/uploads/8bm.svg" alt="8 Billion Minds logo">
         <h2 class="xpTitle">8 Billion Minds, Front End Developer (Part-time volunteer – Remote)</h2>
         <p class="xpText">
-            In 2021 I joined 8 Billion Minds .....Lorem ipsum dolor sit amet consectetur. Eget consequat luctus a dui eu morbi eget dui arcu. Id ac justo odio felis eu. Consectetur sit ornare nisl cras. Lobortis massa nibh eget a.
         </p>
     </div>
     <div class="experienceBlock">
         <img class="xpLogo" src="/assets/uploads/rara.svg" alt="Rara Supply logo">
         <h2 class="xpTitle">Rara Supply Ltd., Lead Web Developer (Part-time consultancy - Remote)</h2>
         <p class="xpText">
-            In 2021 I joined Rara Supply .....Lorem ipsum dolor sit amet consectetur. Eget consequat luctus a dui eu morbi eget dui arcu. Id ac justo odio felis eu. Consectetur sit ornare nisl cras. Lobortis massa nibh eget a.
         </p>
     </div>
     <div class="experienceBlock">

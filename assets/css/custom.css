@@ -437,6 +437,91 @@ span {
   align-self: center;
 }
 
+.experienceBlock.last {
+  margin-bottom: 8rem;
+}
+
+.featuredposts__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
+  grid-gap: 3rem;
+  margin: 2rem 0;
+}
+
+.featuredpost {
+  display: block;
+  height: 300px;
+  position: relative;
+  border-radius: .5rem;
+  overflow: hidden;
+  background-color: var(--color-bg-offset);
+  box-shadow: 14px 14px 60px -10px #0000004d;
+  transition: transform .2s ease;
+}
+
+.featuredpost:hover {
+  transform: scale(1.033);
+}
+
+.featuredpost__inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  border-radius: .5rem;
+  color: #fff;
+  padding: 1rem;
+  background-image: var(--gradient-full);
+}
+
+.featuredpost__link {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  display: block;
+  color: var(--text-color) !important;
+}
+
+.featuredpost__likecount {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.featuredposts__item {
+  list-style-type: none;
+}
+
+#technologies {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  width: 100vw;
+  left: 0;
+  bottom: 11rem;
+  gap: 2rem;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  text-align: center;
+  gap: .5rem;
+}
+
+.fa-brands {
+  align-self: center;
+  font-size: 3rem;
+  width: 3rem;
+  height: 3rem;
+}
+
 .logo, .xpLogo {
   filter: invert(97%) sepia(4%) saturate(1%) hue-rotate(316deg) brightness(86%) contrast(87%);
   height: fit-content;

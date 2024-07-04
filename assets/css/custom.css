@@ -609,6 +609,12 @@ footer {
   #singlePost img {
     max-width: 100%;
   }
+  .experienceBlock.last {
+    margin-bottom: 18rem;
+  }
+  #technologies {
+    flex-wrap: wrap;
+  }
 }
 
 @media only screen and (max-width: 728px) and (min-width: 531px) {

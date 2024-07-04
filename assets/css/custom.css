@@ -501,7 +501,7 @@ span {
   display: flex;
   position: absolute;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
   left: 0;
   bottom: 11rem;
   gap: 2rem;

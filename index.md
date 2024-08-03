@@ -9,6 +9,7 @@ title: Portfolio
         <h2 class="xpTitle">EyeKandy, Frontend Developer (Contract work - Remote)</h2>
         <p class="xpText">
             In 2022 I joined EyeKandy as a contractor. Since then I worked on numerous projects with their teams of designers and project managers, building highly interactive product pages that look and behave exactly like their mobile apps. Working with their teams gave me experience working with an agency that produces deliverables across a whole range of projects, across different industries. Some of the more notable clients included Intel, Bacardi, Dewar's, Frubes and more. I translated their Figma designs into pixel-perfect, fully responsive mobile and desktop versions.<br>
+            <br>
             A few examples below:
         </p>
         <ul class="xpLink">
@@ -31,117 +32,32 @@ title: Portfolio
                 <a href="https://spooky.si/diageo/" target="_blank">Diageo - Summer camp cocktails</a> (best experience on mobile)
             </li>
         </ul>
-        <!-- <ul class="featuredposts__list">
-            <li class="featuredposts__item">
-                <div class="featuredpost" style="background-color: #e4cebe">
-                <picture>
-                    <source sizes="(min-width:1270px) 264px, 95vw"
-                        srcset="/assets/images/processed/Ryq16AjV3O-300.avif 300w, /assets/images/processed/Ryq16AjV3O-500.avif 500w"
-                        type="image/avif"><img alt="" class="featuredpost__image" height="500"
-                        src="/assets/images/processed/Ryq16AjV3O-300.jpeg" width="500" decoding="auto" loading="eager"
-                        sizes="(min-width:1270px) 264px, 95vw"
-                        srcset="/assets/images/processed/Ryq16AjV3O-300.jpeg 300w, /assets/images/processed/Ryq16AjV3O-500.jpeg 500w">
-                </picture>
-                <div class="featuredpost__inner"><a href="/blog/old-dogs-new-css-tricks/" class="featuredpost__link"><span
-                            class="featuredpost__title">Old Dogs, new CSS Tricks</span></a>
-                    <p class="featuredpost__description">A lot of new CSS features have shipped in the last years, but
-                        actual usage is still low. One of the biggest barriers: we need to re-wire our own brains.</p>
-                </div>
-            </div>
-            </li>
-            <li class="featuredposts__item">
-                <div class="featuredpost" style="background-color: #8BC226;">
-                <picture>
-                    <source sizes="(min-width:1270px) 264px, 95vw"
-                        srcset="/assets/images/processed/7LILcVeOSy-300.avif 300w, /assets/images/processed/7LILcVeOSy-500.avif 500w"
-                        type="image/avif"><img alt="" class="featuredpost__image" height="500"
-                        src="/assets/images/processed/7LILcVeOSy-300.jpeg" width="500" decoding="auto" loading="eager"
-                        sizes="(min-width:1270px) 264px, 95vw"
-                        srcset="/assets/images/processed/7LILcVeOSy-300.jpeg 300w, /assets/images/processed/7LILcVeOSy-500.jpeg 500w">
-                </picture>
-                <div class="featuredpost__inner"><a href="/blog/the-indieweb-for-everyone/" class="featuredpost__link"><span
-                            class="featuredpost__title">The IndieWeb for Everyone</span></a>
-                    <p class="featuredpost__description">Many people are looking for alternatives to Twitter. Can the
-                        IndieWeb step up? How can we build better social media for people without technical knowledge?</p>
-                </div>
-            </div>
-        </li>
-        <li class="featuredposts__item">
-            <div class="featuredpost" style="background-color: #4a0147;">
-                <picture>
-                    <source sizes="(min-width:1270px) 264px, 95vw"
-                        srcset="/assets/images/processed/oPvhUG3l0_-300.avif 300w, /assets/images/processed/oPvhUG3l0_-500.avif 500w"
-                        type="image/avif"><img alt="" class="featuredpost__image" height="500"
-                        src="/assets/images/processed/oPvhUG3l0_-300.jpeg" width="500" decoding="auto" loading="eager"
-                        sizes="(min-width:1270px) 264px, 95vw"
-                        srcset="/assets/images/processed/oPvhUG3l0_-300.jpeg 300w, /assets/images/processed/oPvhUG3l0_-500.jpeg 500w">
-                </picture>
-                <div class="featuredpost__inner"><a href="/blog/media-queries-in-times-of-container-queries/"
-                        class="featuredpost__link"><span class="featuredpost__title">Media Queries in Times of
-                            @container</span></a>
-                    <p class="featuredpost__description">With container queries now on the horizon - will we need media
-                        queries at all?</p>
-                </div>
-            </div>
-        </li>
-        <li class="featuredposts__item">
-            <div class="featuredpost" style="background-color: #06624c;">
-                <picture>
-                    <source sizes="(min-width:1270px) 264px, 95vw"
-                        srcset="/assets/images/processed/wwdbVzTUCN-300.avif 300w, /assets/images/processed/wwdbVzTUCN-500.avif 500w"
-                        type="image/avif"><img alt="" class="featuredpost__image" height="500"
-                        src="/assets/images/processed/wwdbVzTUCN-300.jpeg" width="500" decoding="auto" loading="eager"
-                        sizes="(min-width:1270px) 264px, 95vw"
-                        srcset="/assets/images/processed/wwdbVzTUCN-300.jpeg 300w, /assets/images/processed/wwdbVzTUCN-500.jpeg 500w">
-                </picture>
-                <div class="featuredpost__inner"><a href="/blog/container-queries-web-components/"
-                        class="featuredpost__link"><span class="featuredpost__title">Container Queries in Web
-                            Components</span></a>
-                    <p class="featuredpost__description">Container Queries are one of the most anticipated new features in
-                        CSS. I recently got a chance to play with them a bit and came up with this demo.</p>
-                </div>
-            </div>
-        </li>
-        <li class="featuredposts__item">
-            <div class="featuredpost" style="background-color: #000000;">
-                <picture>
-                    <source sizes="(min-width:1270px) 264px, 95vw"
-                        srcset="/assets/images/processed/twGFUMDeRQ-300.avif 300w, /assets/images/processed/twGFUMDeRQ-500.avif 500w"
-                        type="image/avif"><img alt="" class="featuredpost__image" height="500"
-                        src="/assets/images/processed/twGFUMDeRQ-300.jpeg" width="500" decoding="async" loading="lazy"
-                        sizes="(min-width:1270px) 264px, 95vw"
-                        srcset="/assets/images/processed/twGFUMDeRQ-300.jpeg 300w, /assets/images/processed/twGFUMDeRQ-500.jpeg 500w">
-                </picture>
-                <div class="featuredpost__inner"><a href="/blog/space-jam/" class="featuredpost__link"><span
-                            class="featuredpost__title">Space Jam</span></a>
-                    <p class="featuredpost__description">I'm running a speed test on the new Space Jam site: the 1996
-                        version on dial-up VS. the 2021 version on a 3G connection. Who will win?</p>
-                </div>
-            </div>
-            </li>
-        </ul> -->
     </div>
     <div class="experienceBlock">
         <img class="xpLogo" src="/assets/uploads/edocuments.svg" alt="EDocuments logo">
         <h2 class="xpTitle">EDocuments Ltd., Front End Developer (Remote)</h2>
         <ul class="xpText">
             <li>Help build a bespoke platform for construction industry</li>
-            <li>Building front end side of the platform using Azure, Javascript, HTML and CSS</li>
-            <li>Plan, design and develop new features</li>
+            <li>Building front end side of the platform on Azure DevOps and Git using Javascript, HTML, CSS, React</li>
+            <li>Plan, design and develop new components using Figma and React</li>
             <li>Weekly targets meetings and sprints via Teams and workflows using Azure DevOps</li>
         </ul>
     </div>
     <div class="experienceBlock">
         <img class="xpLogo" src="/assets/uploads/8bm.svg" alt="8 Billion Minds logo">
         <h2 class="xpTitle">8 Billion Minds, Front End Developer (Part-time volunteer – Remote)</h2>
-        <p class="xpText">
-        </p>
+        <ul class="xpText">
+            <li>Building front end side of the platform on GitLab using Javascript, HTML, CSS</li>
+            <li>Attending weekly meetings and collaborating with a large team of global volunteers</li>
+        </ul>
     </div>
     <div class="experienceBlock">
         <img class="xpLogo" src="/assets/uploads/rara.svg" alt="Rara Supply logo">
         <h2 class="xpTitle">Rara Supply Ltd., Lead Web Developer (Part-time consultancy - Remote)</h2>
-        <p class="xpText">
-        </p>
+        <ul class="xpText">
+            <li>Building front end side of the website on Wordpress using PHP, SQL, Javascript, HTML, CSS</li>
+            <li>Liasising with CO about general direction for website, design and development on daily basis</li>
+        </ul>
     </div>
     <div class="experienceBlock">
         <img class="xpLogo" src="/assets/uploads/gpmd.svg" alt="GPMD logo">

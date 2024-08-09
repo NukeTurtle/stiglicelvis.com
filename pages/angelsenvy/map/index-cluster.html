@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Create and style clusters</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+
+<script>
+
+    const bounds = [
+        [-119.587306, 25.5], // Southwest coordinates   31.453093, -119.587306
+        [-66.399391, 47.407619] // Northeast coordinates  47.407619, -66.399391
+    ];  
+
+	mapboxgl.accessToken = 'pk.eyJ1IjoicmljaGFyZGV5ZWthbmR5IiwiYSI6ImNsaHlzeWJuZjE3MmozbXBndnpxZW4wNjcifQ.NX8PUpIBrRTAd__MRmG52w';
+    const map = new mapboxgl.Map({
+        container: 'map',
+        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+        style: 'mapbox://styles/richardeyekandy/cli04wefw00ft01pnh6c9e47i',
+        center: [-103.5917, 40.6699],
+        zoom: 4,
+        maxZoom: 8,
+        minZoom: 4,
+        maxBounds: bounds
+    });
+
+
+    map.on('load', () => {
+
+        // Load an image from an external URL.
+        map.loadImage(
+            'https://eyekandy-project-development.s3.eu-west-2.amazonaws.com/richard/mapbox/icons/hero-tree.png',
+            (error, image) => {
+                if (error) throw error;
+                
+                // Add the image to the map style.
+                map.addImage('tree', image);
+                }
+            );
+
+           
+
+        // Add a new source from our GeoJSON data and
+        // set the 'cluster' option to true. GL-JS will
+        // add the point_count property to your source data.
+        map.addSource('earthquakes', {
+            type: 'geojson',
+            //data: 'https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson',
+            data: 'https://eyekandy-project-development.s3.eu-west-2.amazonaws.com/richard/mapbox/001-early-example-file.geojson',
+            cluster: true,
+            clusterMaxZoom: 14, // Max zoom to cluster points on
+            clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+        });
+
+        // Add a layer to use the image to represent the data.
+        map.addLayer({
+                    'id': 'unclustered-point',
+                    'type': 'symbol',
+                    'source': 'earthquakes', // reference the data source
+                    'layout': {
+                            'icon-image': 'tree', // reference the image
+                            'icon-size': 0.04
+                            }
+                    });
+
+        map.addLayer({
+            id: 'clusters',
+            type: 'circle',
+            source: 'earthquakes',
+            filter: ['has', 'point_count'],
+
+            paint: {
+                // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
+                // with three steps to implement three types of circles:
+                'circle-color': [
+                    'step',
+                    ['get', 'point_count'],
+                    '#72283a',
+                    2,
+                    '#72283a',
+                    4,
+                    '#72283a'
+                ]
+                ,
+                'circle-radius': [
+                    'step',
+                    ['get', 'point_count'],
+                    5,
+                    2,
+                    15,
+                    4,
+                    30
+                ]
+            }
+        });
+
+
+        map.addLayer({
+            id: 'cluster-count',
+            type: 'symbol',
+            source: 'earthquakes',
+            filter: ['has', 'point_count'],
+            layout: {
+                'text-field': ['get', 'point_count_abbreviated'],
+                'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+                'text-size': 16,
+                'text-offset': [0, 0],
+                'text-anchor': 'center'
+            },
+            paint: {
+                "text-color": "#ffffff"
+            }
+        });
+
+
+        // inspect a cluster on click
+        map.on('click', 'clusters', (e) => {
+            const features = map.queryRenderedFeatures(e.point, {
+                layers: ['clusters']
+            });
+            const clusterId = features[0].properties.cluster_id;
+            map.getSource('earthquakes').getClusterExpansionZoom(
+                clusterId,
+                (err, zoom) => {
+                    if (err) return;
+
+                    map.easeTo({
+                        center: features[0].geometry.coordinates,
+                        zoom: zoom
+                    });
+                }
+            );
+        });
+
+        // When a click event occurs on a feature in
+        // the unclustered-point layer, open a popup at
+        // the location of the feature, with
+        // description HTML from its properties.
+        map.on('click', 'unclustered-point', (e) => {
+            const coordinates = e.features[0].geometry.coordinates.slice();
+            const created = e.features[0].properties.created;
+            var dateFormat = new Date(created);
+            const plantedOn = dateFormat.getDate()+"/"+(dateFormat.getMonth()+1)+"/"+dateFormat.getFullYear();
+            const initials = e.features[0].properties.initials;
+            const dedication = e.features[0].properties.dedicated === true ? 'No' : 'Yes';
+
+            // Ensure that if the map is zoomed out such that
+            // multiple copies of the feature are visible, the
+            // popup appears over the copy being pointed to.
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+
+            new mapboxgl.Popup()
+                .setLngLat(coordinates)
+                .setHTML(
+                    `Planted on: ${plantedOn}<br>By: ${initials}<br>Was this a dedication: ${dedication}`
+                )
+                .addTo(map);
+        });
+
+        
+
+        map.on('mouseenter', 'clusters', () => {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+        map.on('mouseleave', 'clusters', () => {
+            map.getCanvas().style.cursor = '';
+        });
+    });
+</script>
+
+</body>
+</html>

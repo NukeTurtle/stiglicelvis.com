@@ -1,0 +1,430 @@
+/* Main colours */
+:root{
+    --primary: #51B1BE;
+}
+/* CSS reset */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+}
+.html, body, .container{
+    height: 100vh;
+    font-weight: 100;
+}
+/* CUSTOM SCROLLBAR */
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #fff; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ddd; 
+}
+/* END CUSTOM SCROLLBAR */
+a{
+    color: #fff;
+    font-weight: 100;
+    font-size: x-small;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url("../img/backgrounds/background-desktop.png");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden; 
+    text-align: center;
+}
+/* Share button */
+.top-button{
+    display: none;
+    position: absolute;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 40px;
+    background-size: 35px;
+}
+.share{
+    background-image: url("../img/buttons/button-share.png");
+    left: 5%;
+    top: 3%;
+    z-index: 8;
+    cursor: pointer;
+}
+/* Close X button */
+.close{
+    background-image: url("../img/buttons/button-close.png");
+    right: 6%;
+    top: 4%;
+    z-index: 10;
+    cursor: pointer;
+}
+.center{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-size: contain;
+}
+.left_center, .right_center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.left_center{
+    width: 40%;
+    justify-content: space-evenly;
+}
+.right_center{
+    width: 50%;
+}
+.buttons{
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.logo{
+    width: 200px;
+    height: 100px;
+    background-image: url("../img/logos/logo-with-tagline.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.buttons.top div.secondary{
+    background-image: url("../img/logos/logo-with-tagline.png");
+    width: 210px;
+    height: 100px;
+}
+.buttons.middle .copy{
+    background-image: url("../img/copy images/title-instore.png");
+    width: 350px;
+    height: 160px;
+}
+.buttons.middle .qr{
+    display: none;
+}
+.buttons.bottom .main{
+    background-image: url("../img/buttons/button-start-takehome.png");
+}
+#firstButton{
+    background-image: url("../img/buttons/button-discount.png");
+}
+#secondButton{
+    background-image: url("../img/buttons/button-start-instore.png");
+}
+#thirdButton{
+    background-image: url("../img/buttons/button-back.png");
+}
+.buttons.bottom .copy{
+    height: 15vw !important;
+}
+img.copy{
+    height: 5vw !important;
+}
+.right_center img{
+    object-fit: contain;
+    height: 80%;
+}
+.character{
+    display: none;
+}
+.avatar{
+    background-image: url("../img/images/Avatar.png");
+}
+.doggo{
+    background-image: url("../img/images/Doggo.png");
+    left: 0;
+}
+.second_copy{
+    display: none !important;
+}
+.hidden.button {
+    opacity: 0; /* Hidden by default */
+}
+.button {
+    opacity: 1;
+    transition: opacity 300ms ease-in-out;
+    z-index: 9;
+}
+.main, .secondary, .copy{
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.main{
+    width: 60%;
+    display: none;
+    transition: all .1s ease-in-out;
+}
+.button:active{
+    transform: scale(80%);
+}
+.secondary{
+    width: 40%;
+}
+.first_copy, .second_copy{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+}
+.first_copy, .second_copy{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.central{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#qr{
+    width: 100%;
+    background: url("../img/images/qr-instore.png") no-repeat;
+    background-size: contain !important;
+    background-position: center !important;
+    min-height: 140px;
+}
+.qr{
+    height: 25vh;
+    width: 100%;
+    background: url("../img/images/qr-instore.png") no-repeat;
+    background-size: contain !important;
+    background-position: center !important;
+    margin-bottom: 10px;
+    min-height: 140px;
+}
+#modal{
+    display: none;
+}
+/* Modal (overlay) */
+.modal {
+    background-color: var(--primary);
+    color: #fff;
+    display: none; /* Hidden by default */
+    margin-top: -25px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    /*overflow: auto; /* Enable scroll if needed */
+    z-index: 10;
+}
+/* Modal Inner Box */
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    padding: 10px;
+    height: 90%;
+    font-weight: 100;
+}
+/* Modal text */
+.modal-text{
+    overflow-y: scroll;
+    padding: 10px;
+    text-align: left;
+    font-size: 0.8em;
+    margin: 20px 0;
+}
+.container .center{
+    justify-content: space-between;
+}
+/* Modal Back Button */
+.back {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+}
+.back:hover,
+.back:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.break{
+    width: 100px;
+}
+.animate {
+    animation-duration: 0.5s;
+    animation-name: animate-fade;
+    animation-delay: 0.5s;
+    animation-fill-mode: backwards;
+}
+.animate.pop {
+    animation-name: animate-pop;
+    animation-timing-function: cubic-bezier(.26,.53,.74,1.48);
+}
+.animate h4{
+    line-height: 0px;
+}
+.delay-1 {
+    animation-delay: 0.6s;
+}
+.delay-2 {
+    animation-delay: 0.7s;
+}
+.delay-3 {
+    animation-delay: 0.8s;
+}
+.delay-4 {
+    animation-delay: 1s;
+}
+@keyframes animate-fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes animate-pop {
+    0% {
+        opacity: 0;
+        transform: scale(0.5, 0.5);
+    }
+    40% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(0.9, 0.9);
+    }  
+    100% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+/* Mobile version */
+@media only screen and (max-width: 844px) {
+    .container{
+        background-image: url("../img/backgrounds/background-mobile.png");
+        background-size: contain;
+    }
+    .center{
+        justify-content: space-around !important;
+        flex-direction: column;
+        padding: 40px 0 10px;
+    }
+    #modal{
+        display: block;
+    }
+    .logo{
+        width: 70%;
+        height: 70px;
+        background-image: url(../img/logos/logo.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .share{
+        display: block;
+    }
+    .blob{
+        width: 100%;
+        height: 50vh;
+        background-repeat: no-repeat;
+        display: block;
+        position: absolute;
+        background-size: 100% 100%;
+    }
+    .blob-top{
+        background-image: url("../img/backgrounds/blob-top.png");
+        top: 0;
+        z-index: 1;
+    }
+    .blob-bottom{
+        height: 40%;
+        background-image: url("../img/backgrounds/blob-bottom.png");
+        bottom: 0;
+        z-index: 3;
+    }
+    .character{
+        height: 100%;
+        width: 100%;
+        margin-left: -40px;
+        background-repeat: no-repeat;
+        background-size: 45vh auto;
+        background-position: bottom;
+        bottom: 0%;
+        z-index: 2;
+        position: absolute;
+        display: block;
+    }
+    .left_center{
+        margin: 10% 0;
+        justify-content: space-between;
+    }
+    .right_center{
+        display: none;
+    }
+    .buttons{
+        width: 260px;
+        display: flex;
+        flex-direction: column;
+        user-select: none;
+        outline: none;
+        z-index: 9;
+    }
+    .buttons.middle .copy, .buttons.bottom .copy{
+        display: none;
+    }
+    .buttons.top{
+        align-items: center;
+    }
+    .buttons.top .copy{
+        width: 130%;
+        max-width: 90vw;
+        height: 50px;
+        background-image: url("../img/copy images/title-mobile.png");
+        background-repeat: no-repeat;
+    }
+    .buttons.middle .qr{
+        display: block;
+    }
+    .button{
+        width: 100%;
+        height: 100px;
+        background-size: contain;
+    }
+    .button.secondary{
+        height: 55px;
+    }
+    .top a{
+        display: contents;
+    }
+    .copy{
+        height: 10vw;
+    }
+    .main, .secondary{
+        display: block;
+    }
+    .buttons.middle .qr{
+        display: none;
+    }
+    .buttons.middle.discount .qr, .buttons.middle.discount .copy{
+        display: block;
+    }
+    .qr{
+        display: none;
+        z-index: 9;
+    }
+}

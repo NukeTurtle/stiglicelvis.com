@@ -14,22 +14,22 @@ title: Portfolio
         </p>
         <ul class="xpLink">
             <li>
-                <a href="https://spooky.si/dewars/" target="_blank">Dewar's</a> (best experience on mobile)
+                <a href="{{ site.baseurl }} /pages/dewars/" target="_blank">Dewar's</a> (best experience on mobile)
             </li>
             <li>
-                <a href="https://spooky.si/zooroyal/" target="_blank">Zoo Royal</a> (best experience on mobile)
+                <a href="{{ site.baseurl }} /pages/zooroyal/" target="_blank">Zoo Royal</a> (best experience on mobile)
             </li>
             <li>
-                <a href="https://spooky.si/angelsenvy/" target="_blank">Angels Envy - Toast the trees</a> (best experience on mobile)
+                <a href="{{ site.baseurl }} /pages/angelsenvy/" target="_blank">Angels Envy - Toast the trees</a> (best experience on mobile)
             </li>
             <li>
-                <a href="https://spooky.si/frubes/" target="_blank">Frubes</a> (best experience on mobile)
+                <a href="{{ site.baseurl }} /pages/frubes/" target="_blank">Frubes</a> (best experience on mobile)
             </li>
             <li>
-                <a href="https://spooky.si/cru/" target="_blank">Bombay Sapphire Premier CRU</a> (best experience on mobile)
+                <a href="{{ site.baseurl }} /pages/cru/" target="_blank">Bombay Sapphire Premier CRU</a> (best experience on mobile)
             </li>
             <li>
-                <a href="https://spooky.si/diageo/" target="_blank">Diageo - Summer camp cocktails</a> (best experience on mobile)
+                <a href="{{ site.baseurl }} /pages/diageo/" target="_blank">Diageo - Summer camp cocktails</a> (best experience on mobile)
             </li>
         </ul>
     </div>

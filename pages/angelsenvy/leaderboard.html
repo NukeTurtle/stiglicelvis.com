@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./resources/css/index.css">
+    <link rel="stylesheet" href="./resources/css/cookieStyle.css">
+    <script src="https://js.pointandplace.com/js/latest/eky-angels-envy-connector/eky-angels-envy-connector.js"></script>
+    <script src="./resources/js/jquery-3.7.0.min.js"></script>
+    <link rel="stylesheet" href="./resources/css/bootstrap.min.css">
+    <script src="./resources/js/bootstrap.min.js"></script>
+    <title>Angels Envy - Leaderboard</title>
+    <meta name="theme-color" content="#ffffff"/>
+    <meta name="title" content="Angels Envy AR Experience"/>
+    <meta name="description" content="Check out Angels Envy Toast The Trees Experience here"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://toastthetreesar.angelsenvy.com/"/>
+    <meta property="og:title" content="Angels Envy AR Experience"/>
+    <meta property="og:description" content="Check out Angels Envy Toast The Trees Experience here"/>
+    <meta property="og:image" content="./resources/img/social-share.png"/>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6FXNNY3FE1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-6FXNNY3FE1');
+
+        var utmParam = "utm_campaign";
+        var url = window.location.search;
+        var urlParams = new URLSearchParams(url);
+
+        var utm = "NA";
+
+        if (urlParams.get(utmParam) != null) {
+            utm = urlParams.get(utmParam);
+        }
+
+        var tracking = "t";
+        var deactivate = null;
+        var tracking = true;
+
+        deactivate = urlParams.get(tracking);
+
+        if (deactivate !=null) {
+            tracking = false;
+            console.log("tracking deactivated");
+            gtag('consent', 'update', {
+            'ad_storage': 'denied',
+                'analytics_storage': 'denied',
+            });
+        } 
+
+        
+        const registerButtonClick = (action) => {
+            gtag('event', utm +'_E_' + action,
+            {
+                'type' : 'E',
+                'version': utm,
+                'event': action
+            });
+            console.log(utm +'_E_' + action);
+        };
+
+    </script>
+</head>
+<body>
+    <div id="desktop-version-leaderboard" style="display:none">
+        <div class="d_desktop_container">
+            <div class="d_top_section">
+                <div class="logo">
+                    <img src="./resources/img/ToastTrees.svg" alt="Logo">
+                </div>
+                <div id="leaderboard">
+                    <div id="leaderboard-title"></div>
+                    <img class="button" src="./resources/img/map-btn.png" alt="View Map" onclick="showDesktopMapPage()">
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <th>#</th>
+                                <th>location</th>
+                                <th>virtual trees</th>
+                            </thead>
+                            <tbody>
+                                <tr></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <img class="d_skyline" src="./resources/img/AE_TTT_City Skyline_Color.svg" 
+                style="position: absolute;
+                left: 10%;
+                width: 80%;
+                bottom: 70px;">
+            </div>
+            <div class="d_bottom_section">
+                <img class="d_trees" src="./resources/img/Group 72.svg">
+            </div>
+        </div>
+    </div>
+    <div id="mobile-version-leaderboard" style="display:none">
+        <div class="container">
+            <div class="main">
+                <div class="logo">
+                    <img src="./resources/img/ToastTrees.svg" alt="Logo">
+                </div>
+                <div id="leaderboard">
+                    <div id="leaderboard-title"></div>
+                    <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <th>#</th>
+                            <th>location</th>
+                            <th>virtual trees</th>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+                <div class="bottom-section">
+                    <div class="cta-buttons">
+                        <img src="./resources/img/goBack-btn.png" alt="" onclick="showMainPage()">
+                        <img src="./resources/img/map-btn.png" alt="" onclick="showMapPage()">
+                    </div>
+                    <div class="cts">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img class="trees" src="./resources/img/Trees.svg"></img>
+    </div>
+    <script>
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        let currentPage = 'mobile-version';
+        if (isMobile) {
+            document.getElementById("desktop-version-leaderboard").style.display = 'none';
+            document.getElementById("mobile-version-leaderboard").style.display = 'block';
+        } else {
+            document.getElementById("desktop-version-leaderboard").style.display = 'block';
+            document.getElementById("mobile-version-leaderboard").style.display = 'none';
+        }
+        function showDesktopMainPage (){
+            registerButtonClick("btn_home");
+            $("#desktop-version").fadeIn(.2, function() {})
+            var url = "index.html?utm_campaign="+utm;
+            window.open(url, "_self");
+            $(`#${currentPage}`).fadeOut(.2, function() {});
+            currentPage = 'desktop-version';
+            console.log(currentPage)
+        }
+        function showMainPage (){
+            registerButtonClick("btn_home");
+            $(`#${currentPage}`).fadeOut(.2, function() {});
+            var url = "index.html?utm_campaign="+utm;
+            window.open(url, "_self");
+            $("#mobile-version").fadeIn(.2, function() {})
+            currentPage = 'mobile-version';
+            console.log(currentPage)
+        }
+        function showDesktopMapPage() {
+            registerButtonClick("btn_map");
+            $("#desktop-version-map").fadeIn(.2, function() {})
+            var url = "map.html?utm_campaign="+utm;
+            window.open(url, "_self");
+            currentPage = 'desktop-version-map';
+            console.log(currentPage)
+        }
+        function showMapPage() {
+            registerButtonClick("btn_map");
+            $(`#${currentPage}`).fadeOut(.2, function() {});
+            var url = "map.html?utm_campaign="+utm;
+            window.open(url, "_self");
+            currentPage = 'mobile-version-map';
+            console.log(currentPage)
+        }
+    </script>
+    <script>
+        var connector = new window.AngelsEnvyAPIConnector();
+        let tbody
+        if(isMobile) {
+            tbody = document.querySelector("#mobile-version-leaderboard tbody");
+        } else {
+            tbody = document.querySelector("#desktop-version-leaderboard tbody");
+        }
+
+        // !!!!! UNCOMMENT BELOW PART BEFORE IMPLEMENTATION !!!!!
+        //  !!!! (CONTAINS API CODE) !!!!
+
+        window.addEventListener('load', function(){
+            async function getLeaderboardData() {
+                console.log('getting leaderboard data');
+                const result = await connector.leaderboard();
+                console.log("Results: ", result);
+                
+                // Sort result array by the numbers of trees in last column
+                result.sort((a, b) => {
+                    const lastColumnA = parseInt(a[Object.keys(a)[Object.keys(a).length - 1]]);
+                    const lastColumnB = parseInt(b[Object.keys(b)[Object.keys(b).length - 1]]);
+                    return lastColumnB - lastColumnA;
+                });
+                
+                // Clear existing rows from tbody
+                tbody.innerHTML = "";
+                
+                result.forEach((item, index) => {
+                    if (Object.keys(item).length === 0 || Object.values(item).every(value => value === "")) {
+                    return; // Skip empty or all-blank rows
+                    }
+                
+                    let tr = document.createElement("tr");
+                    let numberCell = document.createElement("td");
+                    numberCell.innerHTML = index + 1;
+                    tr.appendChild(numberCell);
+                
+                    for (const property in item) {
+                    let td = document.createElement("td");
+                    let value = item[property];
+                    td.innerHTML = value;
+                    tr.appendChild(td);
+                    }
+                    tbody.appendChild(tr);
+                });
+            }
+            getLeaderboardData();
+        });
+            
+
+    // !!!!!! UNCOMMENT ABOVE THIS LINE BEFORE IMPLEMENTATION !!!!! 
+
+    // ------------------------------------ 
+
+// !!!!! TEST DATA BELOW  - REMOVE BEFORE IMPLEMENTATION !!!!
+
+//         window.addEventListener('load', function(){
+//         async function getLeaderboardData() {
+//         console.log('getting leaderboard data');
+//         const result = await connector.leaderboard();
+//         console.log("Results: ", result);
+
+//         // Repeat rows to create a total of 12 rows
+//         const multipliedResult = [];
+//         while (multipliedResult.length < 24) {
+//             multipliedResult.push(...result);
+//         }
+
+//         // Sort multipliedResult array by the number of trees in descending order
+//         multipliedResult.sort((a, b) => b.trees - a.trees);
+
+//         // Clear existing rows from tbody
+//         tbody.innerHTML = "";
+
+//         for (let i = 0; i < 24; i++) {
+//             const item = multipliedResult[i];
+//             if (!item || !item.city || !item.trees) {
+//                 continue; // Skip incomplete rows
+//             }
+
+//             let tr = document.createElement("tr");
+//             let numberCell = document.createElement("td");
+//             numberCell.innerHTML = i + 1;
+//             tr.appendChild(numberCell);
+
+//             let cityCell = document.createElement("td");
+//             cityCell.innerHTML = item.city;
+//             tr.appendChild(cityCell);
+
+//             let treesCell = document.createElement("td");
+//             treesCell.innerHTML = item.trees * 4; // Multiply the number of trees by 4
+//             tr.appendChild(treesCell);
+
+//             tbody.appendChild(tr);
+//         }
+//     }
+//     getLeaderboardData();     
+// });
+
+
+// !!!!!!! TEST DATA ABOVE !!!! - REMOVE BEFORE IMPLEMENTATION !!!!!!!
+
+    //    ------------- 
+        
+    let LdrTable;
+let trees;
+
+if (isMobile) {
+  LdrTable = document.querySelector('#mobile-version-leaderboard table');
+  trees = document.querySelector('#mobile-version-leaderboard .trees');
+} else {
+  LdrTable = document.querySelector('#desktop-version-leaderboard table');
+  trees = document.querySelector('#desktop-version-leaderboard .d_trees');
+}
+
+const minY = -200; // Define the minimum bottom position for the trees element
+const maxY = -50; // Define the maximum bottom position for the trees element
+
+let previousY = null;
+let currentBottom = maxY;
+
+function animateTrees() {
+  const containerTop = LdrTable.parentNode.getBoundingClientRect().top;
+  const tableTop = LdrTable.getBoundingClientRect().top;
+
+  const currentY = tableTop - containerTop;
+
+  if (previousY !== null) {
+    const delta = currentY - previousY;
+
+    if (delta < 0 && currentBottom > minY) {
+      // Moving up
+      currentBottom = Math.max(minY, currentBottom + delta * 2.5);
+    } else if (delta > 0 && currentBottom < maxY) {
+      // Moving down
+      currentBottom = Math.min(maxY, currentBottom + delta * 2.5);
+    }
+
+    trees.style.transition = 'bottom 0.3s ease';
+    trees.style.bottom = `${currentBottom}px`;
+  }
+
+  previousY = currentY;
+
+  requestAnimationFrame(animateTrees);
+}
+
+console.log("LdrTable:", LdrTable);
+
+requestAnimationFrame(animateTrees);
+
+    </script>
+</body>
+</html>

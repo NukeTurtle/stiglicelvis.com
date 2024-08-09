@@ -1,0 +1,709 @@
+@font-face {
+    font-family: "TradeGothic";
+    src: url("../fonts/TradeGothicLTPro.ttf");
+}
+
+@font-face {
+    font-family: "BigNoodleTitling";
+    src: url("../fonts/big_noodle_titling.ttf");
+}
+
+:root {
+    --gold: #AA9767;
+    --ruby: #7E213B;
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    scale: 1;
+    color: #000;
+    font-family: TradeGothic;
+}
+
+.logo {
+    animation: logo 10s forwards;
+}
+
+.middle-section {
+    align-self: start;
+}
+
+.trees {
+    z-index: 2;
+    position: absolute;
+    bottom: -55px;
+    left: -25vh;
+    animation: trees 10s linear forwards;
+}
+
+.skyline {
+    position: absolute;
+    left: 0;
+}
+
+.primary-sky {
+    z-index: 1;
+    bottom: 20vh;
+    animation: primarySkyline 10s linear forwards;
+}
+
+.secondary-sky {
+    z-index: 0;
+    bottom: 33vh;
+    animation: secondarySkyline 10s linear forwards;
+}
+
+p {
+    margin-block-start: 0 !important;
+}
+
+.container {
+    background: #fff;
+    background-image: url("../img/Laid Paper Texture 1.png");
+}
+
+.main {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1.8fr 3fr 2fr 0.6fr;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    padding: 5% 5% 15% 5%;
+    z-index: 9;
+    align-items: center;
+}
+
+.largBtn{
+    height: 64px;
+}
+
+.creamBtn{
+    height: 41px;
+}
+
+
+#mobile-version-leaderboard .main {
+    position: initial !important;
+    z-index: 3;
+}
+
+#mobile-version-leaderboard .bottom-section {
+    z-index: 1;
+}
+
+#mobile-version-leaderboard .trees {
+    bottom: -100px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.share {
+    background: url("../img/Share button.svg") no-repeat;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+}
+
+.modal,
+.termsModal {
+    display: none;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+img {
+    z-index: 1;
+}
+
+img,
+svg {
+    vertical-align: initial !important;
+}
+
+.carousel-indicators {
+    position: absolute !important;
+    top: 150px;
+    align-items: normal;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 20px !important;
+    background-color: transparent !important;
+    background-clip: unset !important;
+}
+
+button {
+    background-image: url("../img/Ellipse\ 5.svg");
+    background-repeat: no-repeat;
+    height: fit-content;
+}
+
+button.active {
+    background-image: url("../img/Ellipse\ 4.svg");
+}
+
+.button {
+    cursor: pointer;
+}
+
+#mobile-version-tutorial .middle-section,  #mobile-version-toast .middle-section {
+    animation-name: slide-up;
+    animation-duration: 0.5s;
+}
+
+#mobile-version-tutorial .main>img {
+    margin: 0 auto;
+    margin-bottom: 16px;
+}
+
+.copy {
+    text-align: left;
+}
+
+.copy h3 {
+    font-family: BigNoodleTitling;
+    color: var(--ruby);
+}
+
+.copy p {
+    font-family: TradeGothic;
+    font-size: 14px;
+}
+
+#mobile-version-terms .main > img {
+    padding: 5px 0;
+}
+
+#mobile-version-terms .middle-section {
+    align-self: start;
+    overflow: scroll;
+    height: 50vh;
+    margin-bottom: 8px;
+}
+
+#mobile-version-terms .main {
+    grid-template-rows: 1fr 0.5fr auto 2fr 1fr;
+}
+
+#mobile-version-terms .cta-buttons img {
+    height: 42px;
+}
+
+#leaderboard-title {
+    background: url(../img/Group\ 89.svg) no-repeat;
+    height: 100px;
+    background-size: contain;
+    background-position-x: center;
+}
+
+.table-wrapper {
+    overflow-y: auto;
+    height: 50vh;
+}
+
+.table-wrapper thead th {
+    position: sticky;
+    top: 0px;
+    background: #fff;
+}
+
+table {
+    font-family: 'TradeGothic';
+    font-weight: 700;
+    width: 100%;
+    text-transform: uppercase;
+    border-spacing: 4px !important;
+    border-collapse: unset !important;
+    padding-bottom: 50px;
+}
+
+thead {
+    color: #AA9767;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+td {
+    border: 1px solid var(--gold);
+    padding: 1px;
+    margin: 4px;
+    background-color: #fff;
+    color: var(--ruby);
+    font-size: 23px;
+}
+
+tbody tr:nth-child(-n+5) td {
+    background-color: var(--ruby);
+    color: var(--gold);
+}
+
+tbody tr td:nth-child(1) {
+    width: 20px;
+}
+
+table th:nth-child(2),
+table td:nth-child(2) {
+    text-align: left;
+    padding-left: 8px;
+}
+
+.img-container {
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    align-items: center !important;
+}
+
+#mobile-version-leaderboard .logo img, #mobile-version-map .logo img {
+    max-width: 50%;
+    animation: none;
+}
+
+#mobile-version-leaderboard .cta-buttons img {
+    height: 42px;
+}
+
+#mobile-version-map {
+    pointer-events: none;
+}
+#mobile-version-map>* {
+    padding: 0;
+}
+
+#mobile-version-map .main {
+    padding: 0;
+    z-index: 0;
+}
+
+#mobile-version-map iframe {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: all;
+}
+
+#mobile-version-map #map {
+    height: 100vh;
+    z-index: -1;
+    position: relative;
+}
+
+#mobile-version-map .d_top_section {
+    /* Uncomment this part when golden frame image gets updates */
+    /* background-image: url("../img/Gold Frame.svg"); */
+}
+
+#mobile-version-map .logo {
+    position: absolute;
+    padding-top: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+#mobile-version-map .bottom-section {
+    display: flex;
+    justify-content: center;
+    bottom: 20vh;
+    position: absolute;
+    width: 100vw;
+}
+
+#mobile-version-map .cta-buttons {
+    text-align: center;
+}
+
+#mobile-version-map .cta-buttons img {
+    height: 42px;
+    pointer-events: all;
+}
+
+#mobile-version-map .d_frame{
+    position: absolute;
+    pointer-events: none;
+    top: 1%;
+    left: 1%;
+    width: 98%;
+    height: 98%;
+}
+#mobile-version-map .d_frame img{
+    width: 100%;
+    height: 100%;
+}
+
+.gradient {
+    width: 100%;
+    height: 240px;
+    position: absolute;
+    background-image: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,0) 100%);
+    
+}
+
+/* Animations */
+@keyframes logo {
+    0% {
+        transform: scale(.7)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+@keyframes trees {
+    0% {
+        transform: translateY(0px)
+    }
+
+    100% {
+        transform: translateY(30px)
+    }
+}
+
+@keyframes primarySkyline {
+    0% {
+        transform: translateY(0px)
+    }
+
+    100% {
+        transform: translateY(-11px)
+    }
+}
+
+@keyframes secondarySkyline {
+    0% {
+        transform: translateY(0px)
+    }
+
+    100% {
+        transform: translateY(20px)
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(200%);
+    }
+
+    50% {
+        transform: translateY(-120%);
+    }
+
+    70% {
+        transform: translateY(-110%);
+    }
+
+    100% {
+        transform: translateY(-110%);
+    }
+}
+
+@keyframes slide-down {
+    0% {
+        opacity: 100%;
+        transform: translateY(3%);
+    }
+
+    80% {
+        opacity: 100%;
+        transform: translateY(5%);
+    }
+
+    80% {
+        opacity: 0%;
+        transform: translateY(100%);
+    }
+
+    100% {
+        opacity: 0%;
+        transform: translateY(100%);
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        opacity: 0%;
+        transform: translateY(100%);
+    }
+
+    80% {
+        opacity: 0%;
+        transform: translateY(100%);
+    }
+
+    80% {
+        opacity: 100%;
+        transform: translateY(5%);
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translateY(3%);
+    }
+}
+
+/* Small Mobile version */
+@media only screen and (max-device-width: 375px) { 
+    .main {
+        padding: 5% 5% 0% 5%;
+    }
+
+    #mobile-version-map .bottom-section {
+        bottom: 10vh;
+    }
+}
+
+@media only screen and (min-width: 400px) {
+    #desktop-version {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #desktop-version .d_desktop_container {
+        display: grid;
+        grid-template-rows: 2fr 3fr 2fr 0.5fr;
+        width: 100vw;
+    }
+
+    div[id*="desktop-version"] .d_top_section {
+        pointer-events: none;
+        width: calc(100vw - 10%);
+        text-align: center;
+        margin: 1% 5% 0;
+        background-image: url("../img/NewBoarder.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: 0;
+        min-height: 600px;
+    }
+
+    #desktop-version .d_desktop_container .logo {
+        animation: none;
+    }
+
+    #desktop-version .logo img {
+        width: 40%;
+    }
+
+    #desktop-version img.d_skyline {
+        bottom: 25vh;
+        width: 80%;
+        right: 10%;
+        margin: 0 auto;
+        position: absolute;
+        z-index: -1 !important;
+    }
+
+    .d_middle_section {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .d_middle_section img {
+        bottom: 0;
+        z-index: 0;
+    }
+
+    #desktop-version .d_bottom_section {
+        position: absolute;
+        bottom: 0;
+        background: #fff;
+    }
+
+    img.d_trees {
+        /* bottom: 160px; */
+        width: 100%;
+        /* height: 20%;
+        object-fit: cover;
+        object-position: 0% 35%; */
+        position: relative;
+        bottom: -90px;
+    }
+
+    #desktop-version .d_inner_section {
+        border: 1px solid var(--ruby);
+        box-sizing: border-box;
+        margin: 10px;
+        width: calc(100vw - 20px);
+        text-align: center;
+    }
+
+    #desktop-version .d_bottom_section .d_images {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #desktop-version .d_bottom_section .d_images img {
+        margin: 0 auto 5px;
+    }
+
+    #desktop-version img.d_qr {
+        margin-top: -10vh;
+        width:150px;
+    }
+
+    #desktop-version img.d_scan {
+        width: 50%;
+        min-width: 400px;
+    }
+
+
+
+    #desktop-version-leaderboard {
+        height: 100vh;
+    }
+
+    #desktop-version-leaderboard .logo {
+        animation: none !important;
+    }
+
+    #desktop-version-leaderboard .button{
+        height: 41px;
+    }
+
+    #desktop-version-leaderboard #leaderboard {
+        pointer-events: all;
+        position: absolute;
+        z-index: 9;
+        width: 90%;
+    }
+
+    #desktop-version-leaderboard #leaderboard-title {
+        margin: 0 auto;
+        text-align: center;
+        width: calc(50% - 10%);
+    }
+
+    #desktop-version-leaderboard .table-wrapper {
+        overflow-y: auto;
+        margin: 0 25%;
+    }
+
+    #desktop-version-leaderboard .d_top_section {
+        background-image: url("../img/NewBoarder.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #desktop-version-map {
+        pointer-events: none;
+    }
+
+    #desktop-version-map .d_top_section {
+        background-image: url("../img/NewBoarder.svg");
+    }
+
+    #desktop-version-map .d_frame{
+        position: absolute;
+        pointer-events: none;
+        top: 1%;
+        left: 1%;
+        width: 98%;
+        height: 98%;
+    }
+    #desktop-version-map .d_frame img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .d_bottom_section {
+        position: absolute;
+        z-index: 9;
+        bottom: 0;
+        pointer-events: none;
+    }
+
+
+    #desktop-version-leaderboard td {
+        padding: 5px;
+    }
+
+    #desktop-version-leaderboard img.d_trees {
+        width: 100vw;
+        height: 360px;
+    }
+
+    #desktop-version-leaderboard table {
+        padding-bottom: 30vh;
+    }
+
+    #desktop-version-map .d_top_section {
+        pointer-events: none;
+        width: auto;
+        height: 100vh;
+        text-align: center;
+        margin: 0;
+        background-image: none;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #desktop-version-map .logo {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 5vh;
+        animation: none;
+    }
+
+    #desktop-version-map .logo img {
+        width: 20%;
+    }
+
+    #desktop-version-map .bottom-section {
+        pointer-events: all;
+        position: absolute;
+        bottom: 5vh;
+        width: 100%;
+        text-align: center;
+    }
+
+    #desktop-version-map .cta-buttons img {
+        height: 42px;
+    }
+
+    #desktop-version-map .d_desktop_container iframe {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: all;
+        z-index: -1;
+    }
+
+    #desktop-version-map .logo {
+        pointer-events: none;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+    }
+
+    .alternate img.d_trees {
+        bottom: 55px;
+        object-position: 0% 40% !important;
+        height: 60%;
+    }
+
+    .alternate img.d_scan {
+        width: 30% !important;
+        min-width: 200px !important;
+    }
+
+    .alternate .d_bottom_section .d_images img {
+        margin: 5px auto !important;
+    }
+}

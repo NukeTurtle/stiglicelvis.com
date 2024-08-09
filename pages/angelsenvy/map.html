@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./resources/css/index.css">
+    <link rel="stylesheet" href="./resources/css/cookieStyle.css">
+    <script src="https://js.pointandplace.com/js/latest/eky-angels-envy-connector/eky-angels-envy-connector.js"></script>
+    <script src="./resources/js/jquery-3.7.0.min.js"></script>
+    <link rel="stylesheet" href="./resources/css/bootstrap.min.css">
+    <script src="./resources/js/bootstrap.min.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+    <title>Angels Envy - Map</title>
+    <meta name="theme-color" content="#ffffff"/>
+    <meta name="title" content="Angels Envy AR Experience"/>
+    <meta name="description" content="Check out Angels Envy Toast The Trees Experience here"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://toastthetreesar.angelsenvy.com/"/>
+    <meta property="og:title" content="Angels Envy AR Experience"/>
+    <meta property="og:description" content="Check out Angels Envy Toast The Trees Experience here"/>
+    <meta property="og:image" content="./resources/img/social-share.png"/>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6FXNNY3FE1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-6FXNNY3FE1');
+
+        var utmParam = "utm_campaign";
+        var url = window.location.search;
+        var urlParams = new URLSearchParams(url);
+
+        var utm = "NA";
+
+        if (urlParams.get(utmParam) != null) {
+            utm = urlParams.get(utmParam);
+        }
+
+        var tracking = "t";
+        var deactivate = null;
+        var tracking = true;
+
+        deactivate = urlParams.get(tracking);
+
+        if (deactivate !=null) {
+            tracking = false;
+            console.log("tracking deactivated");
+            gtag('consent', 'update', {
+            'ad_storage': 'denied',
+                'analytics_storage': 'denied',
+            });
+        } 
+
+        
+        const registerButtonClick = (action) => {
+            gtag('event', utm +'_E_' + action,
+            {
+                'type' : 'E',
+                'version': utm,
+                'event': action
+            });
+            console.log(utm +'_E_' + action);
+        };
+
+    </script>
+
+    <style>
+        .map { position: absolute; top: 0; bottom: 0; width: 100%; height:105%; z-index: -1; pointer-events: all;}
+    </style>
+</head>
+<body>
+    <div id="desktop-version-map" style="display:none">
+        <div class="d_desktop_container">
+            <div class="d_top_section">
+                <div class="gradient"></div>
+                <div class="logo">
+                    <img src="./resources/img/ToastTrees.svg" alt="Logo">
+                </div>
+                <div id="map" class="map"></div>
+                </div>
+                <div class="bottom-section">
+                    <div class="cta-buttons">
+                        <img class="button" src="./resources/img/goBack-btn.png" alt="" onclick="showDesktopMainPage()">
+                        <img class="button" src="./resources/img/leaderborad-btn.png" alt="" onclick="showDesktopLeaderboardPage()">
+                    </div>
+                </div>
+            </div>
+            <div class="d_frame">
+                <img src="./resources/img/NewBoard-NoGap-landscape.svg">
+            </div>
+    </div>
+    <div id="mobile-version-map" style="display:none">
+        <div class="d_mobile_container">
+            <div class="d_top_section">
+                <div class="gradient"></div>
+                <div class="logo">
+                    <img src="./resources/img/ToastTrees.svg" alt="Logo">
+                </div>
+                <div id="map">
+                    <div id="map-mobile" class="map"></div>
+                </div>
+            </div>
+            <div class="bottom-section">
+                <div class="cta-buttons">
+                    <img src="./resources/img/goBack-btn.png" alt="" onclick="showMainPage()">
+                    <img src="./resources/img/leaderborad-btn.png" alt="" onclick="showLeaderboardPage()">
+                </div>
+            </div>
+        </div>
+        <div class="d_frame">
+            <img src="./resources/img/NewBoard-NoGap.svg">
+        </div>
+    </div>
+    
+    <script>
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        let currentPage = 'mobile-version';
+        if (isMobile) {
+            document.getElementById("desktop-version-map").style.display = 'none';
+            document.getElementById("mobile-version-map").style.display = 'block';
+        } else {
+            document.getElementById("desktop-version-map").style.display = 'block';
+            document.getElementById("mobile-version-map").style.display = 'none';
+        }
+        function showDesktopLeaderboardPage (){
+            registerButtonClick("btn_leaderboard");
+            $(`#${currentPage}`).fadeOut(.2, function() {});
+            var url = "leaderboard.html?utm_campaign="+utm;
+            window.open(url, "_self");
+            currentPage = 'desktop-version-leaderboard';
+            console.log(currentPage)
+        }
+        function showLeaderboardPage () {
+            registerButtonClick("btn_leaderboard");
+            $(`#${currentPage}`).fadeOut(.2, function() {});
+            var url = "leaderboard.html?utm_campaign="+utm;
+            window.open(url, "_self");
+            currentPage = 'mobile-version-leaderboard';
+            console.log(currentPage)
+        }
+        function showDesktopMainPage (){
+            registerButtonClick("btn_home");
+            $("#desktop-version").fadeIn(.2, function() {})
+            var url = "index.html?utm_campaign="+utm;
+            window.open(url, "_self");
+            $(`#${currentPage}`).fadeOut(.2, function() {});
+            currentPage = 'desktop-version';
+            console.log(currentPage)
+        }
+        function showMainPage (){
+            registerButtonClick("btn_home");
+            $(`#${currentPage}`).fadeOut(.2, function() {});
+            var url = "index.html?utm_campaign="+utm;
+            window.open(url, "_self");
+            $("#mobile-version").fadeIn(.2, function() {})
+            currentPage = 'mobile-version';
+            console.log(currentPage)
+        }
+    </script>
+
+    <script>
+
+        // const bounds = [
+        //     [-163.00, 20.14], // Southwest coordinates   31.453093, -119.587306
+        //     [-52.39, 55.40] // Northeast coordinates  47.407619, -66.399391
+        // ];  
+
+        mapboxgl.accessToken = 'pk.eyJ1IjoicmljaGFyZGV5ZWthbmR5IiwiYSI6ImNsaHlzeWJuZjE3MmozbXBndnpxZW4wNjcifQ.NX8PUpIBrRTAd__MRmG52w';
+
+        var map;
+
+        if (isMobile) {
+            map = new mapboxgl.Map({
+            container: 'map-mobile',
+            // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+            style: 'mapbox://styles/richardeyekandy/cli04wefw00ft01pnh6c9e47i',
+            center: [-103.5917, 40.6699],
+            zoom: 3,
+            maxZoom: 10,
+            minZoom: 2
+            // maxBounds: bounds
+            });
+        } else {
+            map = new mapboxgl.Map({
+            container: 'map',
+            // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+            style: 'mapbox://styles/richardeyekandy/cli04wefw00ft01pnh6c9e47i',
+            center: [-103.5917, 40.6699],
+            zoom: 3,
+            maxZoom: 10,
+            minZoom: 2
+            // maxBounds: bounds
+        });
+        }
+        
+
+
+        map.on('load', () => {
+
+            // Load an image from an external URL.
+            map.loadImage(
+                'https://eyekandy-project-development.s3.eu-west-2.amazonaws.com/richard/mapbox/icons/hero-tree.png',
+                (error, image) => {
+                    if (error) throw error;
+                    
+                    // Add the image to the map style.
+                    map.addImage('tree', image);
+                    }
+                );
+
+            
+
+            // Add a new source from our GeoJSON data and
+            // set the 'cluster' option to true. GL-JS will
+            // add the point_count property to your source data.
+            map.addSource('treesPlanted', {
+                type: 'geojson',
+                data: 'https://cdn.pointandplace.com/projects/angels-envy/trees-dev.geojson',
+                cluster: true,
+                clusterMaxZoom: 14, // Max zoom to cluster points on
+                clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+            });
+
+            // Add a layer to use the image to represent the data.
+            map.addLayer({
+                        'id': 'unclustered-point',
+                        'type': 'symbol',
+                        'source': 'treesPlanted', // reference the data source
+                        'layout': {
+                                'icon-image': 'tree', // reference the image
+                                'icon-size': 0.04
+                                }
+                        });
+
+            map.addLayer({
+                id: 'clusters',
+                type: 'circle',
+                source: 'treesPlanted',
+                filter: ['has', 'point_count'],
+
+                paint: {
+                    // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
+                    // with three steps to implement three types of circles:
+                    'circle-color': [
+                        'step',
+                        ['get', 'point_count'],
+                        '#72283a',
+                        2,
+                        '#72283a',
+                        4,
+                        '#72283a'
+                    ]
+                    ,
+                    'circle-radius': [
+                        'step',
+                        ['get', 'point_count'],
+                        5,
+                        2,
+                        15,
+                        4,
+                        30
+                    ]
+                }
+            });
+
+
+            map.addLayer({
+                id: 'cluster-count',
+                type: 'symbol',
+                source: 'treesPlanted',
+                filter: ['has', 'point_count'],
+                layout: {
+                    'text-field': ['get', 'point_count_abbreviated'],
+                    'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+                    'text-size': 16,
+                    'text-offset': [0, 0],
+                    'text-anchor': 'center'
+                },
+                paint: {
+                    "text-color": "#ffffff"
+                }
+            });
+
+
+            // inspect a cluster on click
+            map.on('click', 'clusters', (e) => {
+                const features = map.queryRenderedFeatures(e.point, {
+                    layers: ['clusters']
+                });
+                const clusterId = features[0].properties.cluster_id;
+                map.getSource('treesPlanted').getClusterExpansionZoom(
+                    clusterId,
+                    (err, zoom) => {
+                        if (err) return;
+
+                        map.easeTo({
+                            center: features[0].geometry.coordinates,
+                            zoom: zoom
+                        });
+                    }
+                );
+            });
+
+            // When a click event occurs on a feature in
+            // the unclustered-point layer, open a popup at
+            // the location of the feature, with
+            // description HTML from its properties.
+            map.on('click', 'unclustered-point', (e) => {
+                const coordinates = e.features[0].geometry.coordinates.slice();
+                const created = e.features[0].properties.created;
+                var dateFormat = new Date(created);
+                const plantedOn = dateFormat.getMonth()+"/"+(dateFormat.getDate()+1)+"/"+dateFormat.getFullYear();
+                const initials = e.features[0].properties.initials;
+                const dedication = e.features[0].properties.dedicated === true ? 'No' : 'Yes';
+
+                // Ensure that if the map is zoomed out such that
+                // multiple copies of the feature are visible, the
+                // popup appears over the copy being pointed to.
+                while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                }
+
+                new mapboxgl.Popup()
+                    .setLngLat(coordinates)
+                    // .setHTML(
+                    //     `Planted on: ${plantedOn}<br>By: ${initials}<br>Was this a dedication: ${dedication}`
+                    // )
+                    .setHTML(
+                        `Planted on: ${plantedOn}`
+                    )
+                    .addTo(map);
+            });
+
+            
+
+            map.on('mouseenter', 'clusters', () => {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+            map.on('mouseleave', 'clusters', () => {
+                map.getCanvas().style.cursor = '';
+            });
+        });
+    </script>
+</body>
+</html>

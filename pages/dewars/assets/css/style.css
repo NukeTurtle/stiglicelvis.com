@@ -1,0 +1,349 @@
+/* Variables */
+:root{
+    --pipe: url("../img/desktop-rivet.png");
+}
+/* CSS reset */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.html, body, .container{
+    overflow: hidden;
+    position: absolute;
+    top:0;
+    width: 100%;
+    bottom: 0;
+    max-height: 100%;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../img/desktop-background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    overflow: hidden;
+    position: absolute;
+    top:0;
+    width: 100%;
+    bottom: 0;
+    max-height: 100%;
+}
+.pipe{
+    background-repeat: no-repeat !important;
+    background-size: 15%, 30px !important;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.top-left{
+    background: url("../img/desktop-pipe-topleft.png"), url("../img/desktop-rivet.png");
+    background-position: top left, 2% 2%;
+}
+.top-right{
+    background: url("../img/desktop-pipe-topright.png"), url("../img/desktop-rivet.png");
+    background-position: top right, 98% 2%;
+}
+.bottom-right{
+    background: url("../img/desktop-pipe-bottomright.png"), url("../img/desktop-rivet.png");
+    background-position: bottom right, 98% 97%;
+}
+.bottom-left{
+    background: url("../img/desktop-pipe-bottomleft.png"), url("../img/desktop-rivet.png");
+    background-position: bottom left, 2% 97%;
+}
+.mobile-pipes{
+    display: none;
+}
+.center{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--blue);
+    padding: 10px 0 40px 0;
+}
+.logo_placeholder{ 
+    width: 30%;
+    max-width: 600px;
+    height: 200px;
+    min-height: 245px;
+    z-index: 2;
+    position: relative;
+    margin-top: -20px;
+}
+.logo{
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/desktop-logo-lockup.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 2;
+}
+.hidden.button {
+    opacity: 0; /* Hidden by default */
+}
+.button {
+    opacity: 1;
+    transition: opacity 300ms ease-in-out;
+    z-index: 2;
+    margin: -10px !important;
+}
+.main, .tutorial{
+    transition: all .1s ease-in-out;
+    z-index: 2;
+    height: 95px;
+}
+.main:active, .close:active{
+    transform: scale(80%); /* Buttons "pop" when interacted with (80% size)  */
+    z-index: 2;
+}
+.first_copy, .second_copy{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 30%;
+    text-align: center;
+    margin-bottom: 5px;
+    z-index: 2;
+}
+img.copy{
+    height: 40vw;
+    max-height: 600px;
+}
+.tutorial, .play, .cookies{
+    display: none;
+}
+.qr{
+    height: 100%;
+    width: 200px;
+    background-image: url(../img/desktop-QR-and-frame.png);
+    background-size: contain;
+    background-position: center !important;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    min-height: 140px;
+}
+.bottle{
+    display: none;
+}
+
+/* Modal (overlay) */
+.modal {
+    background-image: url(../img/mobile-background.png);
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    z-index: 3; /* Sit on top */
+}
+.animate {
+    animation-duration: 0.5s;
+    animation-name: animate-fade;
+    animation-delay: 0.2s;
+    animation-fill-mode: backwards;
+}
+.animate.pop {
+    animation-name: animate-pop;
+    animation-timing-function: cubic-bezier(.26,.53,.74,1.48);
+}
+.delay-1 {
+    animation-delay: 0.6s;
+}
+.delay-2 {
+    animation-delay: 0.8s;
+}
+.delay-3 {
+    animation-delay: 1s;
+}
+.delay-4 {
+    animation-delay: 1.2s;
+}
+
+@keyframes animate-fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes animate-pop {
+    0% {
+        opacity: 0;
+        transform: scale(0.5, 0.5);
+    }
+    40% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(0.9, 0.9);
+    }  
+    100% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+@media only screen and (min-width: 641px) {
+    .align{
+        display: none;
+    }
+    .arg{
+        display: none;
+    }
+}
+
+/* Mobile version */
+@media only screen and (max-width: 640px) {
+    .container {
+        background-image: url(../img/mobile-background.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: unset;
+        flex-direction: column;
+    }
+    .logo_placeholder{
+        display: none;
+    }
+    .mobile-logo_placeholder{
+        min-width: 200px;
+        max-width: 50vw;
+        height: 180px;
+        min-height: 180px;
+        top: 0;
+        position: static;
+    }
+    .tutorial.logo_placeholder{
+        margin-bottom: -100px;
+        width: initial;
+        height: auto;
+        margin-bottom: initial;
+    }
+    .logo {
+        height: 90px;
+        top: 0;
+        position: sticky;
+        background-image: url(../img/mobile-logo.png);
+    }
+    .sub-header{
+        background-image: url(../img/mobile-title.png);
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .center{
+        flex-direction: column;
+        padding: 0;
+        margin: -30px 0 10px;
+    }
+    .bottle{
+        background-image: url(../img/mobile-bottle-shelf.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 52%;
+        width: 100%;
+        display: block;
+    }
+    .pipe{
+        background: var(--pipe), var(--pipe), var(--pipe), var(--pipe);
+        background-position: 2% 2%, 97% 2%, 97% 97%, 2% 97%;
+        background-size: 20px !important;
+    }
+    .mobile-pipes{
+        background-image: url(../img/mobile-pipes.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        z-index: 1;
+    }
+    .button.copy:first-of-type{
+        display: none;
+    }
+    .buttons{
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        outline: none;
+        z-index: 2;
+        bottom: 20px;
+        position: relative;
+    }
+    .index.buttons{
+        margin-top: 20px;
+        position: inherit;
+    }
+    /* Modal Close Button */
+    .close {
+        transition: all .1s ease-in-out;
+        width: 100px;
+        bottom: 30px;
+        position: relative;
+    }
+    .close:hover,
+    .close:focus {
+        cursor: pointer;
+    }
+    img.copy{
+        height: 15vw;
+    }
+    .tutorial, .main, .cookies{
+        display: initial;
+    }
+    .tutorial{
+        width: 95%;
+        height: auto;
+        margin-bottom: -15px;
+    }
+    .tutorial.button.align{
+        position: unset;
+    }
+    .qr, .second_copy{
+        display: none;
+    }
+    .modal{
+        margin: 0 0 10px;
+    }
+}
+
+/* Surface Duo screen */
+@media only screen and (width: 540px) {
+    .logo {
+        height: 160px;
+    }
+}
+
+/* Smaller mobile version */
+@media only screen and (max-width: 375px) {
+    .logo {
+        margin-top: -20px;
+    }
+}

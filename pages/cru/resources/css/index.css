@@ -1,0 +1,542 @@
+@font-face {
+    font-family: "SapphireSans";
+    src: url("../fonts/SapphireSans.ttf");
+}
+
+html {
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    scale: 1;
+    color: #000;
+    font-family: "SapphireSans";
+}
+
+p {
+    margin-block-start: 0 !important;
+}
+
+#mobile-version {
+    background: #fff;
+    background-image: url("../img/mobile_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.share {
+    position: absolute;
+    top: 8vw;
+    right: 10px;
+    z-index: 9;
+}
+
+.bottle {
+    vertical-align: initial !important;
+}
+
+img {
+    z-index: 1;
+}
+
+img,
+svg {
+    vertical-align: initial !important;
+}
+
+.back_prop {
+    position: absolute;
+}
+
+.bush1 {
+    top: -100px;
+    left: 0;
+}
+
+.bush2 {
+    bottom: -5px;
+    right: 0;
+}
+
+.juniper1 {
+    left: 60px;
+    bottom: 50vh;
+}
+
+.juniper2 {
+    right: 40px;
+    top: 25vh;
+}
+
+#cookies-page .juniper1 {
+    left: 0;
+}
+
+#cookies-page .juniper2 {
+    right: 0;
+}
+
+.juniper3 {
+    left: 0px;
+    bottom: 35vh;
+}
+
+#mobile-version .prop1 {
+    right: 0px;
+    bottom: 30vh;
+    animation: slide-left .9s ease-in-out;
+}
+
+#mobile-version .prop2 {
+    left: 0px;
+    top: 20vh;
+    animation: slide-right .9s ease-in-out;
+}
+
+.rectangle1,
+.rectangle2 {
+    width: 105vw;
+    z-index: 0;
+    left: -10px;
+}
+
+.rectangle2 {
+    bottom: -320px;
+}
+
+.slide-up {
+    animation: slideUp .9s ease-in-out forwards;
+}
+
+.slide-down {
+    animation: slideDown .9s ease-in-out forwards;
+}
+
+.logo {
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    max-width: 70%;
+}
+
+#main-page .middle-section, #tutorial-page .middle-section {
+    grid-row: 3;
+    display: block;
+}
+
+.bottom-section {
+    grid-row: 4;
+}
+
+.fade-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease-in-out;
+}
+
+.img-container {
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    align-items: center !important;
+}
+
+.gradient {
+    width: 100%;
+    height: 180px;
+    position: absolute;
+    background-image: linear-gradient(#fff, transparent);
+}
+
+.hide {
+    opacity: 0;
+    transition: opacity 0.5s linear;
+    top: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+}
+
+.show {
+    transition: opacity 0.5s linear;
+    opacity: 1;
+    position: relative;
+    pointer-events: auto;
+}
+
+.fade-in {
+    opacity: 1;
+    visibility: visible;
+    z-index: 9;
+    position: absolute;
+    top: 0;
+}
+
+.bottom_copy {
+    position: relative;
+}
+
+.terms{
+    color: #0C1C49;
+    text-decoration: underline;
+}
+
+#tutorial-page .main {
+    grid-template-rows: 12vh 61vh 17vh;
+}
+
+.middle-section img {
+    height: 85%;
+    }
+    .btn {
+        margin: 0 auto;
+    }
+    .bottom-section img:nth-of-type(1) {
+        height: 3rem;
+    }
+    .bottom-section img:nth-of-type(2) {
+    height: 2.5rem;
+    }
+    .bottom-section img:nth-of-type(3) {
+    height: 1rem;
+        width: 100%;
+        object-fit: none;
+    }
+    
+    #main-page .bottom-section, #tutorial-page .bottom-section, #cookies-page .bottom-section {
+        grid-row: 4;
+        max-height: 100%;
+        display: grid;
+    }
+
+/* MAIN PAGE */
+.main {
+    position: relative;
+    display: grid;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    z-index: 8;
+}
+
+#mobile-version .main {
+    grid-template-rows: 2vh 25vh 40vh 18vh;
+}
+
+#mobile-version .travel {
+    width: 100vw;
+}
+
+/* TUTORIAL PAGE */
+#tutorial-page .logo, #cookies-page .logo {
+    grid-row: 1;
+}
+
+#tutorial-page .middle-section, #cookies-page .middle-section {
+    grid-row: 2;
+}
+
+#tutorial-page .bottom-section, #cookies-page .bottom-section {
+    grid-row: 3;
+}
+
+#tutorial-page .main {
+    grid-template-rows: 10vh 58vh 20vh;
+    align-items: center;
+}
+
+.img_bottle {
+    height: 100%;
+}
+
+.img_bottle,
+.img_tutorial_copy {
+    transition: opacity 2s ease-in-out;
+}
+
+#tutorial-page .img_tutorial_copy {
+    height: 50vh;
+}
+
+#tutorial-page .prop1 {
+    right: -65px;
+    animation: slide-right .9s ease-in-out;
+}
+
+#tutorial-page .prop2 {
+    left: -75px;
+    animation: slide-left .9s ease-in-out;
+}
+
+#tutorial-page .rectangle1 {
+    animation: slideDown .9s ease-in-out forwards;
+}
+
+#tutorial-page .rectangle2 {
+    animation: slideUp .9s ease-in-out forwards;
+}
+
+#mobile-version-tutorial .main>img {
+    margin: 0 auto;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+/* COOKIES PAGE */
+#cookies-page .main>img {
+    padding: 5px 0;
+}
+
+#cookies-page .middle-section {
+    overflow: scroll;
+    height: 100%;
+    text-align: left;
+    padding: 0 2rem;
+}
+
+#cookies-page .bottom-section {
+    grid-row: 4;
+}
+
+#cookies-page .main {
+    /* go back moved down */
+    grid-template-rows: 0 75vh 10vh;
+}
+
+/* EXPERIENCE ENDED PAGE */
+#experienceended .rectangle2 {
+    bottom: -270px;
+}
+
+/* Animations */
+@keyframes slide-right {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(75px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+@media only screen and (min-width: 370px) {
+    #desktop-version .back_prop {
+        height: 40vh;
+    }
+
+    .desktop_bush1 {
+        top: -2vh;
+        right: 0px;
+    }
+
+    .desktop_bush2 {
+        left: 0;
+        bottom: 0;
+    }
+
+    .desktop_bush3 {
+        right: 0;
+        bottom: 0;
+    }
+
+    .desktop_bush4 {
+        right: 0;
+        bottom: 0;
+    }
+
+    .desktop_glass {
+        left: 0;
+        top: 0;
+        height: 50vh !important;
+    }
+
+    .desktop_bowl {
+        right: 0;
+        top: 35vh;
+    }
+
+    .desktop_spoon {
+        left: 10vw;
+        bottom: 20vh;
+    }
+
+    .desktop_bag {
+        right: 0;
+        top: 0;
+    }
+
+    .desktop_juniper1 {
+        left: 0;
+        bottom: -10vh;
+        object-fit: none;
+    }
+
+    .desktop_juniper2 {
+        right: -5vh;
+        bottom: 0vh;
+        rotate: -60deg;
+    }
+
+    .desktop_juniper3 {
+        right: 0;
+        top: 0;
+    }
+
+    .desktop_juniper4 {
+        left: 0;
+        bottom: 10vh;
+    }
+
+    #desktop-version {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #desktop-version {
+        top: 0%;
+        left: 0%;
+        width: 100vw;
+        height: 100vh;
+        background-image: url("../img/desktop_background.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom, top;
+    }
+
+    .top-banner {
+        width: 100vw;
+        top: 0;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .travel_bar {
+        width: 100%;
+    }
+
+    .right-elements-list {
+        position: relative;
+        display: grid;
+        grid-auto-rows: 25vh 20vh 3vh 25vh;
+        grid-area: 1;
+        justify-self: left;
+        justify-items: center;
+        align-content: center;
+    }
+
+    .right-elements-list img,
+    .left-elements-list img {
+        max-width: 30vw;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    .left-elements-list {
+        position: relative;
+        display: grid;
+        grid-auto-rows: 100vh;
+        grid-area: 1;
+        justify-self: right;
+        z-index: 0;
+        margin-top: 6%;
+    }
+
+    #comingsoon .right-elements-list,
+    #experienceended .right-elements-list {
+        grid-auto-rows: 30vh 19vh 25vh;
+    }
+
+    #comingsoon .logo,
+    #experienceended .logo {
+        grid-row: 1 !important;
+    }
+
+    #comingsoon .copy,
+    #experienceended .copy {
+        grid-row: 2 !important;
+    }
+
+    #comingsoon .bottom-section img:nth-of-type(1){
+        height: 50% !important;
+        margin: 0 auto;
+    }
+
+    #experienceended .bottom-section img:nth-of-type(1) {
+        height: 100% !important;
+        margin: 0 auto;
+    }
+
+    #desktop-version .logo img {
+        width: 40%;
+    }
+
+    #desktop-version .middle-section {
+        display: grid;
+    }
+
+    #desktop-version .logo{
+        grid-row: 1;
+        height: 100%;
+    }
+    #desktop-version .qr{
+        grid-row: 2;
+    }
+    #desktop-version .scan{
+        grid-row: 3;
+    }
+    #desktop-version .copy{
+        grid-row: 4;
+    }
+
+    #desktop-version .bottom-copy {
+        width: 100vw;
+        bottom: 0;
+        position: absolute;
+        text-align: center;
+        z-index: 1;
+        font-size: 1.2rem;
+    }
+}

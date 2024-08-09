@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./resources/css/index.css">
+    <script src="./resources/js/jquery-3.7.0.min.js"></script>
+    <title>Bombay Sapphire Premier CRU</title>
+    <meta name="theme-color" content="#ffffff"/>
+    <meta name="title" content="Bombay Sapphire Premier CRU"/>
+    <meta name="description" content="TBC"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://TBC"/>
+    <meta property="og:title" content="Bombay Sapphire Premier CRU"/>
+    <meta property="og:description" content="TBC"/>
+    <meta property="og:image" content="https://project-prod-bacardi-animated-model.s3.eu-west-2.amazonaws.com/bombay-prem-cru/resources/img/Social-share.jpg"/>
+
+    <link rel="icon" type="image/x-icon" href="https://project-prod-bacardi-animated-model.s3.eu-west-2.amazonaws.com/bombay-prem-cru/resources/img/favicon.ico">
+    <link rel="icon" href="https://project-prod-bacardi-animated-model.s3.eu-west-2.amazonaws.com/bombay-prem-cru/resources/img/Favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="https://project-prod-bacardi-animated-model.s3.eu-west-2.amazonaws.com/bombay-prem-cru/resources/img/Favicon-192x192.png" sizes="192x192">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7QGYP696X5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-7QGYP696X5');
+
+        var utmParam = "utm_content";
+        var url = window.location.search;
+        var urlParams = new URLSearchParams(url);
+
+        var utm = "NA";
+
+        if (urlParams.get(utmParam) != null) {
+            utm = urlParams.get(utmParam);
+        }
+
+        var tracking = "t";
+        var deactivate = null;
+        var tracking = true;
+
+        deactivate = urlParams.get(tracking);
+
+        if (deactivate !=null) {
+            tracking = false;
+            console.log("tracking deactivated");
+            gtag('consent', 'update', {
+            'ad_storage': 'denied',
+                'analytics_storage': 'denied',
+            });
+        } 
+
+        
+        const registerButtonClick = (action) => {
+            gtag('event', utm +'_E_' + action,
+            {
+                'type' : 'E',
+                'version': utm,
+                'event': action
+            });
+            console.log(utm +'_E_' + action);
+        };
+
+    </script>
+
+</head>
+
+<body>
+    <div id="desktop-version" style="display:block">
+        <img class="back_prop desktop_juniper1" src="./resources/img/desktop_juniper1.png" alt="">
+        <img class="back_prop desktop_juniper2" src="./resources/img/desktop_juniper4.png" alt="">
+        <img class="back_prop desktop_juniper3" src="./resources/img/desktop_juniper3.png" alt="">
+        <img class="back_prop desktop_juniper4" src="./resources/img/desktop_juniper4.png" alt="">
+        <img class="back_prop desktop_bush1" src="./resources/img/desktop_bush1.png" alt="">
+        <img class="back_prop desktop_bush2" src="./resources/img/desktop_bush2.png" alt="">
+        <img class="back_prop desktop_bush3" src="./resources/img/desktop_bush3.png" alt="">
+        <img class="back_prop desktop_glass" src="./resources/img/desktop_glass.png" alt="">
+        <img class="back_prop desktop_bowl" src="./resources/img/desktop_bowl.png" alt="">
+        <img class="back_prop desktop_bag" src="./resources/img/desktop_bag.png" alt="">
+        <img class="back_prop desktop_spoon" src="./resources/img/desktop_spoon.png" alt="">
+        <div class="top-banner">
+            <img class="travel_bar" src="./resources/img/travel_bar.png" alt="">
+        </div>
+        <div class="middle-section">
+            <div class="left-elements-list">
+                <img class="bottle" src="./resources/img/desktop_bottle.png"></img>
+            </div>
+            <div class="right-elements-list">
+                <img class="logo" src="./resources/img/logo_secondary_large.png"></img>
+                <img class="qr" src="./resources/img/qr-code-old-staging.svg"></img>
+                <img class="scan" src="./resources/img/scan_qr_code.png"></img>
+                <img class="copy" src="./resources/img/discover2.png"></img>
+            </div>
+        </div>
+        <div class="bottom-copy">
+            <span>ENJOY BOMBAY SAPPHIRE PREMIER CRU RESPONSIBLY. © 2023 BOMBAY SAPPHIRE PREMIER CRU AND ITS TRADE DRESS ARE TRADEMARKS.</span>
+        </div>
+    </div>
+    <div id="mobile-version">
+        <div id="main-page">
+            <img class="travel" src="./resources/img/travel_bar_mobile.png" alt="Logo">
+            <img class="share" src="./resources/img/Share button.png" alt="Share" onclick="showShare()">
+            <img class="back_prop bush1" src="./resources/img/bush_left.png" alt="">
+            <img class="back_prop bush2" src="./resources/img/bush_right.png" alt="">
+            <img class="back_prop juniper2" src="./resources/img/juniper_2.png" alt="">
+            <img class="back_prop juniper1" src="./resources/img/juniper_1.png" alt="">
+            <img class="back_prop juniper3" src="./resources/img/juniper_3.png" alt="">
+            <img class="back_prop prop1" src="./resources/img/bowl.png" alt="">
+            <img class="back_prop prop2" src="./resources/img/glass.png" alt="">
+            <div class="main">
+                <div class="logo">
+                    <img src="./resources/img/logo.png" alt="Logo">
+                </div>
+                <div class="middle-section bottle">
+                    <img class="img_bottle" src="./resources/img/bottle.png" alt="Text Image">
+                </div>
+                <div class="bottom-section">
+                    <img src="./resources/img/Launch Button.png" class="btn" alt="Launch Experience" onclick="launchExperience()">
+                    <img src="./resources/img/Tutorial button.png" class="btn btn_main" alt="Show Tutorial" onclick="showTutorialPage()">
+                    <div class="terms" alt="Show Terms" onclick="showTermsPage()">Terms & Conditions</div>
+                </div>
+            </div>
+        </div>
+        <div id="tutorial-page">
+            <img class="share" src="./resources/img/Share button.png" alt="Share" onclick="showShare()">
+            <img class="back_prop rectangle2" src="./resources/img/mobile_bottom_rectangle.png" alt="">
+            <img class="back_prop rectangle1" src="./resources/img/tutorial_bar.png" alt="">
+            <div class="main">
+                <div class="logo">
+                </div>
+                <div class="middle-section">
+                    <img class="img_tutorial_copy" src="./resources/img/tutorial_copy.png" alt="Text Image">
+                </div>
+                <div class="bottom-section">
+                    <img src="./resources/img/Launch Button.png" class="btn" alt="Start" onclick="launchExperience()">
+                    <img src="./resources/img/Back button.png" class="btn btn_back" alt="Back Button" onclick="showMainPage()">
+                    <img src="./resources/img/Cookies button.png" alt="Show Cookies" onclick="showCookiesPage()">
+                </div>
+            </div>
+        </div>
+        <div id="cookies-page">
+            <img class="back_prop juniper2" src="./resources/img/juniper_2.png" alt="">
+            <img class="back_prop juniper1" src="./resources/img/juniper_1.png" alt="">
+            <img class="back_prop bush2" src="./resources/img/bush_right.png" alt="">
+            <img class="back_prop rectangle2 slide-up" src="./resources/img/mobile_bottom_rectangle.png" alt="">
+            <div class="main">
+                <div class="logo">
+                    <!-- <img src="./resources/img/tutorial.png" alt="Logo"> -->
+                </div>
+                <div class="middle-section">
+                    <div class="copy">
+                        <h3>Terms and Conditions</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit
+                            urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.
+                            Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non
+                            suscipit magna interdum eu.Curabitur pellentesque nibh nibh, at maximus ante fermentum sit
+                            amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam
+                            condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.
+                            Praesent lorem orci, mattis non efficitur id, ultricies vel nibh.Sed volutpat lacus vitae
+                            gravida viverra. Fusce vel tempor elit. Proin tempus, magna id scelerisque vestibulum, nulla
+                            ex pharetra sapien, tempor posuere massa neque nec felis. Aliquam sem ipsum, vehicula ac
+                            tortor vel, egestas ullamcorper dui.
+                        </p>
+                        <h3>PRIVACY POLICY</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit
+                            urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.
+                            Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non
+                            suscipit magna interdum eu.Curabitur pellentesque nibh nibh, at maximus ante fermentum sit
+                            amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam
+                            condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilisis id.
+                            Praesent lorem orci, mattis non efficitur id, ultricies vel nibh.Sed volutpat lacus vitae
+                            gravida viverra. Fusce vel tempor elit. Proin tempus, magna id scelerisque vestibulum, nulla
+                            ex pharetra sapien, tempor posuere massa neque nec felis. Aliquam sem ipsum, vehicula ac
+                            tortor vel, egestas ullamcorper dui.
+                        </p>
+                    </div>
+                </div>
+                <div class="bottom-section">
+                    <img src="./resources/img/Back button.png" class="btn btn_back" alt="Back Button" onclick="showMainPage()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./resources/js/index.js"></script>
+</body>
+
+</html>

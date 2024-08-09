@@ -1,0 +1,377 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+
+body {
+  font-family: 'IntelOne Display', Tahoma, Arial, sans-serif;
+  font-weight: 500;
+  width: 100vw;
+  min-width: 320px;
+  color: #00c7fd;
+  background-color: #1D1D1D;
+  height: 87vh;
+  overflow: hidden;
+ }
+
+p {
+  font-size: 1rem; }
+
+.superscript {
+  font-size: 50%;
+  position: relative;
+  top: -1.2rem; }
+
+.capitals {
+  text-transform: uppercase; }
+
+.blue {
+  color: #00C7FD; }
+
+#stage {
+  min-width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100%;
+  opacity: 0; }
+
+#stage.ready {
+  opacity: 1;
+  transition: opacity 0.3s 0.3s; }
+
+
+#stage.mobile {
+  display: flex;
+  justify-content: center; }
+
+#stage.desktop {
+  display: block;
+  align-items: center;
+  overflow: auto;
+  min-height: 100vh; }
+
+#stage.desktop .camera-wrapper {
+  display: none; }
+
+#stage.desktop .desktop-wrapper {
+  display: block; }
+
+#stage.desktop .desktop-wrapper .videoTop{
+  display: block;
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 60%;
+  background-color: black;
+}
+
+#stage.desktop .desktop-wrapper .videoTop video{
+  width:100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#stage.desktop .desktop-wrapper .videoTop .blackOverlay{
+  display: block;
+  position: absolute;
+  top:0;
+  width:100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.33;
+}
+
+
+
+#stage.desktop .desktop-wrapper .videoTop .evoLogo{
+  display: block;
+  position: absolute;
+  top: 15%;
+  margin: 0 auto;
+  width: 100%;
+  min-width: 300px;
+  height: 40%;
+  background-image: url(../images/logo-evo@3x.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+}
+
+
+#stage.desktop .desktop-wrapper .solidBottom{
+  display: block;
+  position: absolute;
+  bottom:0;
+  left:0;
+  width: 100%;
+  height: 40%;
+  min-height:300px;
+  background-color: #1D1D1D;
+  box-shadow: 0 -30px 36px #00c7fd15;
+}
+
+#stage.desktop .desktop-wrapper .solidBottom .QRHolder{
+  display: block;
+  position: relative;
+  bottom:40%;
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+  background-image: url(../images/QR-background@3x.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#stage.desktop .desktop-wrapper .solidBottom .QRHolder .QRImage{
+  display: block;
+  position: relative;
+  left: 60px;
+  top:60px;
+  width:60%;
+  height:60%;
+  background-image: url(../images/QR-intel-ar-com-share.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: #ffffff;
+}
+
+#stage.desktop .desktop-wrapper .solidBottom .header{
+  display: block;
+  position: relative;
+  bottom: 40%;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5em;
+  font-family: 'IntelOne Display';
+  font-weight: 500;
+  color: #00C7FD;
+}
+
+#stage.desktop .desktop-wrapper .solidBottom .header .subHeader{
+  padding-top:10px;
+  font-size: 1em;
+  font-family: 'IntelOne Display';
+  font-weight: 300;
+  color: #fff;
+}
+
+
+
+
+/* ////// Start of mobile CSS ////////////// */
+
+#stage.mobile .mobile-wrapper {
+  display: block; 
+}
+
+#stage.mobile .desktop-wrapper {
+  display: none; }
+
+
+#stage.mobile .mobile-wrapper .videoTop{
+  display: block;
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 80%;
+  background-color: black;
+}
+
+#stage.mobile .mobile-wrapper .solidBottom{
+  display: block;
+  position: absolute;
+  bottom:0;
+  left:0;
+  width: 100%;
+  height: 20%;
+  min-height:160px;
+  background-color: #1D1D1D;
+  box-shadow: 0 -30px 36px #00c7fd15;
+}
+
+#stage.mobile .mobile-wrapper  .videoTop video{
+  width:100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#stage.mobile .mobile-wrapper .videoTop .blackOverlay{
+  display: block;
+  position: absolute;
+  top:0;
+  width:100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.33;
+}
+
+#stage.mobile .mobile-wrapper .videoTop .evoLogo{
+  display: block;
+  position: absolute;
+  top: 10%;
+  margin-left: 15%;
+  width: 70%;
+  height: 40%;
+  background-image: url(../images/logo-evo@3x.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#stage.mobile .mobile-wrapper .videoTop .header{
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 70%;
+  margin-left: 15%;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.7rem;
+  font-family: 'IntelOne Display';
+  font-weight: normal;
+  color: #ffffff;
+}
+
+#stage.mobile .mobile-wrapper .solidBottom .largeBlue{
+  background-color: #00C7FD;
+  width: 70%;
+  margin-left: 15%;
+  border-radius: 30px;
+  color: #fff;
+  padding:15px 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+#stage.mobile .mobile-wrapper .solidBottom .topOffsett{
+  margin-top:-25px;
+}
+
+#stage.mobile .mobile-wrapper .solidBottom .normalWhite{
+  background-color: #ffffff;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 20px;
+  border-radius: 20px;
+  color: #00C7FD;
+  padding:10px 0;
+  text-align: center;
+  font-weight: 300;
+  font-size: 0.8em;
+}
+
+#stage.mobile .mobile-wrapper .cookieLink {
+  margin-top:20px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 300;
+  font-size: 0.5em;
+  text-decoration: underline;
+}
+
+#stage.mobile .mobile-wrapper .solidBottom #introButtons{
+  display: block;
+}
+
+#stage.mobile .mobile-wrapper .solidBottom #retailerButtons{
+  display: none;
+}
+
+
+ /* --------- Media Query for Desktop----------------- */
+@media screen and (min-width: 961px) {
+  
+        
+}
+
+ /* --------- Media Query for Small Mobile----------------- */
+@media screen and (min-height: 640px) {
+  
+}
+
+ /* --------- Media Query Medium Mobile----------------- */
+@media screen and (min-height: 680px) {
+  
+
+}
+
+@media (orientation: portrait) {
+  /* #stage.mobile .landscape {
+    display: none; } */
+}
+
+@media (orientation: landscape) {
+
+  #stage.mobile .mobile-wrapper .videoTop .header {
+    width: 100%;
+    margin-left: 0%;
+  }
+
+  #stage.mobile .mobile-wrapper .solidBottom { 
+    min-height: 120px;
+  }
+
+  #stage.mobile .mobile-wrapper .solidBottom .largeBlue {
+    width:30%;
+    margin-left: 35%;
+  } 
+ 
+}
+  
+
+
+            
+  
+  
+
+  
+            

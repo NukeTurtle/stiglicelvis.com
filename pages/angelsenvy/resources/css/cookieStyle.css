@@ -1,0 +1,304 @@
+
+/* Global Variables */
+:root {
+  --main-bg-color: #1D1D1D;
+  --main-textColor: #ffffff;
+  --sec-textColor: #00C7FD;
+  --btnBckColor: #00C7FD;
+  --borderColor: #00C7FD;
+}
+
+
+
+#cookieHolder {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: var(--main-bg-color);
+  color:#000;
+  z-index: 9;
+}
+#cookieHolder #stop-click {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: transparent;
+  background-color: rgba(1, 1, 1, 0.5);
+  z-index: 20;
+  display:none;
+}
+#cookieHolder #no-compat {
+  position: fixed;
+  display: none;
+  width: 80vw;
+  height: auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  border: 1px #0071c5 solid;
+  text-align: center;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 22;
+}
+#cookieHolder #cookies {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: -1px;
+  height: auto;
+  padding: 10px 5px;
+  background: var(--main-bg-color);
+  box-shadow: 0 -30px 36px #00c7fd15;
+  transition: all 0.3s ease;
+  transform: none;
+  z-index: 20;
+}
+#cookieHolder #cookies.hidden {
+  display:none;
+  /* transform: translateY(105%); */
+}
+#cookieHolder #cookies .btn-section {
+  width: 100%;
+  display: block;
+  position: relative;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+#cookieHolder #cookies .btn-section .btn-cookie-large-blue {
+  background-color: var(--btnBckColor);
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 20px;
+  border-radius: 30px;
+  color: #fff;
+  padding:15px 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+
+#cookieHolder #cookies .btn-section .btn-cookies-small-white {
+  background-color: #fff;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 10px;
+  border-radius: 20px;
+  color: var(--sec-textColor);
+  padding:10px 0;
+  font-size: 0.7rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+
+
+#cookieHolder #cookies .tag {
+  position: relative;
+  width: calc(100% - 50px);
+  padding: 0px 25px;
+  line-height: 1.3;
+  font-family: 'IntelOne Display';
+  font-weight: normal;
+  font-size: 0.7rem;
+  text-align: center;
+  color: var(--main-textColor);
+}
+
+#cookieHolder #cookies .tag a,
+#cookieHolder #cookies .tag a:visited,
+#cookieHolder #cookies .tag a:hover {
+  color: var(--sec-textColor);
+}
+#cookieHolder #cookies .tag .cookieHeader {
+  font-family: 'IntelOne Display';
+  font-weight: 500;
+  font-size: .8rem;
+  color: var(--sec-textColor);
+}
+
+#cookieHolder #cookies .tag .cookies {
+  color: var(--sec-textColor);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#cookieHolder #cookies .tag #inlineManage{
+  text-decoration: underline;
+}
+
+
+
+
+#cookieHolder .option-container {
+  position: fixed;
+  visibility:visible;
+  display: block;
+  width: calc(100% - 40px);
+  height: calc(100% - 30px);
+  padding: 10px 20px 20px 20px;
+  background: var(--main-bg-color);
+  top: 0;
+  left: 0;
+  z-index: 10;
+  color: #fff;
+  overflow: scroll;
+  opacity: 1;
+  transition: all 0.5s linear;
+}
+
+.hide {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+
+#cookieHolder .option-container a {
+  color: var(--sec-textColor);
+}
+#cookieHolder .option-container a:visited {
+  color: var(--sec-textColor);
+}
+#cookieHolder .option-container a:hover {
+  color: var(--sec-textColor);
+}
+
+#cookieHolder .option-container p {
+  font-family: 'IntelOne Display';
+  font-weight: normal;
+  font-size: 0.7rem;
+  line-height: 1rem;
+}
+#cookieHolder .option-container h2 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-family: 'IntelOne Display';
+  font-weight: 500;
+  font-size: 1.2em;
+  text-align: center;
+  color: var(--sec-textColor)
+}
+#cookieHolder .option-container h3,
+#cookieHolder .option-container h4 {
+  display: block;
+  position: relative;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  pointer-events: none;
+  text-align: left;
+  font-family: 'IntelOne Display';
+  font-weight: 500;
+  font-size: 1em;
+  color: var(--sec-textColor)
+}
+#cookieHolder .option-container #toggle-analytics {
+  display: inline;
+  float: right;
+  width: 70px;
+  height: 30px;
+  transform: translateY(-40%);
+  overflow: hidden;
+  pointer-events: auto;
+}
+#cookieHolder .option-container #toggle-analytics .toggle-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 100px;
+  overflow: hidden;
+}
+#cookieHolder .option-container #toggle-analytics .toggle-wrapper .setting {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: var(--btnBckColor);;
+  left: 0;
+  transition: all 0.3s ease;
+}
+#cookieHolder .option-container #toggle-analytics .toggle-wrapper .setting:after {
+  content: '켜기';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 9px;
+  text-align: left;
+  margin-left: 5px;
+  color: var(--main-bg-color);
+}
+#cookieHolder .option-container #toggle-analytics .toggle-wrapper .symbol {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  top: 2px;
+  left: 42px;
+  border: 0px solid #aaa;
+  border-radius: 50%;
+  background: var(--main-bg-color);
+  transition: all 0.3s ease;
+}
+#cookieHolder .option-container #toggle-analytics.active .setting {
+  background: #ffffff;
+}
+#cookieHolder .option-container #toggle-analytics.active .setting:after {
+  content: '끄기';
+  text-align: right;
+  margin-left: -5px;
+}
+#cookieHolder .option-container #toggle-analytics.active .symbol {
+  left: 2px;
+}
+#cookieHolder .option-container .close {
+  position: relative;
+  background-color: var(--btnBckColor);
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 20px;
+  border-radius: 30px;
+  color: #fff;
+  padding:15px 0;
+  text-align: center;
+  font-weight: 500;
+  pointer-events: all;
+}
+
+
+#cookieHolder.mobile .option-container h2 {
+  text-align: left;
+}
+
+@media (orientation: landscape) {
+
+
+
+  #cookieHolder #cookies .btn-section .btn-cookie-large-blue {
+    width:30%;
+    margin-left: 35%;
+  }
+
+  #cookieHolder #cookies .btn-section .btn-cookies-small-white {
+    width:30%;
+    margin-left: 35%;
+  }
+  
+  #cookieHolder .option-container .close {
+    width:30%;
+    margin-left: 35%;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  #cookieHolder{
+    display:none;
+  }     
+}
+
+

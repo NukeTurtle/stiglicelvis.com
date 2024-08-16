@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,58 +15,29 @@
     <meta property="og:title" content="Bombay Sapphire Premier CRU"/>
     <meta property="og:description" content="TBC"/>
     <meta property="og:image" content="https://project-prod-bacardi-animated-model.s3.eu-west-2.amazonaws.com/bombay-prem-cru/resources/img/Social-share.jpg"/>
-
     <link rel="icon" type="image/x-icon" href="https://project-prod-bacardi-animated-model.s3.eu-west-2.amazonaws.com/bombay-prem-cru/resources/img/favicon.ico">
     <link rel="icon" href="https://project-prod-bacardi-animated-model.s3.eu-west-2.amazonaws.com/bombay-prem-cru/resources/img/Favicon-32x32.png" sizes="32x32">
     <link rel="icon" href="https://project-prod-bacardi-animated-model.s3.eu-west-2.amazonaws.com/bombay-prem-cru/resources/img/Favicon-192x192.png" sizes="192x192">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7QGYP696X5"></script>
+    <!-- Hotjar Tracking Code -->
     <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:5084190,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B17T7642JL"></script>
+        <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
-        gtag('config', 'G-7QGYP696X5');
-
-        var utmParam = "utm_content";
-        var url = window.location.search;
-        var urlParams = new URLSearchParams(url);
-
-        var utm = "NA";
-
-        if (urlParams.get(utmParam) != null) {
-            utm = urlParams.get(utmParam);
-        }
-
-        var tracking = "t";
-        var deactivate = null;
-        var tracking = true;
-
-        deactivate = urlParams.get(tracking);
-
-        if (deactivate !=null) {
-            tracking = false;
-            console.log("tracking deactivated");
-            gtag('consent', 'update', {
-            'ad_storage': 'denied',
-                'analytics_storage': 'denied',
-            });
-        } 
-
-        
-        const registerButtonClick = (action) => {
-            gtag('event', utm +'_E_' + action,
-            {
-                'type' : 'E',
-                'version': utm,
-                'event': action
-            });
-            console.log(utm +'_E_' + action);
-        };
-
-    </script>
-
+        gtag('config', 'G-B17T7642JL');
+    </script>    
 </head>
 
 <body>
@@ -188,5 +158,4 @@
     </div>
     <script src="./resources/js/index.js"></script>
 </body>
-
 </html>

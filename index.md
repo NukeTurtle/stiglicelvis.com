@@ -4,6 +4,8 @@ title: Portfolio
 ---
 
 <section id="pastExperiences">
+    <iframe id="youtube-video" height="370px" src="https://www.youtube.com/embed/jbJmUj9SxvA?si=VWltx9KI7dXnKWY0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
     <div class="experienceBlock">
         <img class="xpLogo" src="/assets/uploads/eyekandy.svg" alt="EyeKandy logo">
         <h2 class="xpTitle">EyeKandy, Frontend Developer (Contract work - Remote)</h2>

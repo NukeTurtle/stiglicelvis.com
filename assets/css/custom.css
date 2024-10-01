@@ -80,6 +80,7 @@ body {
   color: var(--comment);
   border-radius: 50%;
   padding: 6px 10px;
+  z-index: 9;
 }
 
 #scroll_up:hover {

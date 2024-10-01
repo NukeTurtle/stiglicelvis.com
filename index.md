@@ -37,11 +37,11 @@ title: Portfolio
     </div>
     <div class="experienceBlock">
         <img class="xpLogo" src="/assets/uploads/edocuments.svg" alt="EDocuments logo">
-        <h2 class="xpTitle">EDocuments Ltd., Front End Developer (Remote)</h2>
+        <h2 class="xpTitle">EDocuments Ltd., Front End Developer (Full Time - Remote)</h2>
         <ul class="xpText">
-            <li>Help build a bespoke platform for construction industry</li>
-            <li>Building front end side of the platform on Azure DevOps and Git using Javascript, HTML, CSS, React</li>
-            <li>Plan, design and develop new components using Figma and React</li>
+            <li>Helping build a bespoke platform for construction industry</li>
+            <li>Building Frontend side of the platform on Azure DevOps and Git using Javascript, HTML, CSS, React</li>
+            <li>Planning, designing and developing new components using Figma and React</li>
             <li>Weekly targets meetings and sprints via Teams and workflows using Azure DevOps</li>
         </ul>
     </div>
@@ -49,16 +49,17 @@ title: Portfolio
         <img class="xpLogo" src="/assets/uploads/8bm.svg" alt="8 Billion Minds logo">
         <h2 class="xpTitle">8 Billion Minds, Front End Developer (Part-time volunteer – Remote)</h2>
         <ul class="xpText">
-            <li>Building front end side of the platform on GitLab using Javascript, HTML, CSS</li>
-            <li>Attending weekly meetings and collaborating with a large team of global volunteers</li>
+            <li>Helping build a bespoke learning platform for people to learn and teach various subjects</li>
+            <li>Building Frontend side of the platform using Docker, GitLab, Javascript, HTML and CSS</li>
+            <li>Weekly targets meetings and reports via Zoom and workflow management using Trello</li>
         </ul>
     </div>
     <div class="experienceBlock">
         <img class="xpLogo" src="/assets/uploads/rara.svg" alt="Rara Supply logo">
         <h2 class="xpTitle">Rara Supply Ltd., Lead Web Developer (Part-time consultancy - Remote)</h2>
         <ul class="xpText">
-            <li>Building front end side of the website on Wordpress using PHP, SQL, Javascript, HTML, CSS</li>
-            <li>Liasising with CO about general direction for website, design and development on daily basis</li>
+            <li>Building Frontend of the e-commerce website in Wordpress using PHP, SQL, Javascript, HTML, CSS</li>
+            <li>Liasising with CO about general direction for website, design and development on monthly basis</li>
         </ul>
     </div>
     <div class="experienceBlock">

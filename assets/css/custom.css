@@ -520,7 +520,7 @@ span {
   gap: .5rem;
 }
 
-.fa-brands {
+.fa-brands, .fa-solid {
   align-self: center;
   font-size: 3rem;
   width: 3rem;

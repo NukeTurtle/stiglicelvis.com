@@ -142,6 +142,14 @@ title: Portfolio
             <span>Tailwind</span>
         </div>
         <div class="item">
+            <i class="fa-brands fa-php"></i>
+            <span>PHP</span>
+        </div>
+        <div class="item">
+            <i class="fa-solid fa-database"></i>
+            <span>MySQL</span>
+        </div>
+        <div class="item">
             <i class="fa-brands fa-figma"></i>
             <span>Figma</span>
         </div>

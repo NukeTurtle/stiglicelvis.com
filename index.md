@@ -110,6 +110,10 @@ title: Portfolio
             <span>Node.js</span>
         </div>
         <div class="item">
+            <i class="fa-brands fa-angular"></i>
+            <span>Angular</span>
+        </div>
+        <div class="item">
             <i class="fa-brands fa-react"></i>
             <span>React</span>
         </div>

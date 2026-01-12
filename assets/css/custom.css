@@ -30,7 +30,7 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  gap: 3.5rem;
+  /* gap: 3.5rem; */
   margin: 0;
   padding: 0;
   text-rendering: optimizeLegibility;
